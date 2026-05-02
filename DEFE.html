@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Département des Sciences de l'Éducation — Faculté des Sciences de l'Éducation</title>
+<link rel="icon" type="image/png" href="image/title.png">
+
+<meta name="description" content="Département des Sciences de l'Éducation — Formation de qualité en psychologie, sociologie et TIC en éducation au Cameroun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LDRLJSK3L4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LDRLJSK3L4');
+</script>
+<style>
+  .heros{
+  background:
+  linear-gradient(
+    135deg,
+    rgba(4,45,18,0.82) 0%,
+    rgba(11,92,46,0.75) 50%,
+    rgba(2,26,9,0.85) 100%
+  ),
+  url('image/yaounde.jpg') center center / cover no-repeat;
+  padding:90px 4% 80px;
+  display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;
+  min-height:calc(100vh - 68px);
+  position:relative;overflow:hidden;
+ }
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="pre-logo">
+    <div class="pre-insigne">
+      <img src="image/logo.jpg" alt="Logo FSE"
+           onerror="this.style.display='none';this.parentElement.innerHTML='FSE';">
+    </div>
+    <div class="pre-nom">Faculté des Sciences de l'Éducation</div>
+    <div class="pre-sous">Université de Yaoundé I· Cameroun</div>
+  </div>
+  <div class="pre-barre-fond">
+    <div class="pre-barre"></div>
+  </div>
+  <div class="pre-texte">Chargement en cours...</div>
+</div>
+
+<!-- ══════════════════ NAVIGATION ══════════════════ -->
+<nav id="barre-nav">
+  <div class="logo" onclick="afficherPage('accueil')">
+    <div class="logo-insigne">
+      <img src="image/logo.jpg" alt="Logo FSE"
+           onerror="this.style.display='none';this.parentElement.innerHTML='FSE';">
+    </div>
+    <div class="logo-texte">
+      <strong>Faculté des Sciences de l'Éducation</strong>
+      <span>Université — Cameroun</span>
+    </div>
+  </div>
+  <div class="nav-liens">
+    <a onclick="afficherPage('accueil')" class="actif" id="nav-accueil">
+        <i class="fas fa-home"></i> Accueil
+    </a>
+
+    <a onclick="afficherPage('etudiants')" id="nav-etudiants">
+        <i class="fas fa-user-graduate"></i> Étudiants
+    </a>
+
+    <a onclick="afficherPage('professeurs')" id="nav-professeurs">
+        <i class="fas fa-chalkboard-teacher"></i> Professeurs
+    </a>
+
+    <a onclick="afficherPage('formations')" id="nav-formations">
+        <i class="fas fa-book"></i> Formations
+    </a>
+
+    <a onclick="afficherPage('apropos')" id="nav-apropos">
+        <i class="fas fa-university"></i> À propos
+    </a>
+
+    <a onclick="afficherPage('contact')" id="nav-contact">
+        <i class="fas fa-envelope"></i> Contact
+    </a>
+
+    <a onclick="afficherPage('contact')" class="nav-cta">
+        <i class="fas fa-arrow-right"></i> S'inscrire
+    </a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="menuMobile">
+  <a onclick="afficherPage('accueil');toggleMenu()">🏛 Accueil</a>
+  <a onclick="afficherPage('etudiants');toggleMenu()">🎓 Étudiants</a>
+  <a onclick="afficherPage('professeurs');toggleMenu()">👨‍🏫 Professeurs</a>
+  <a onclick="afficherPage('formations');toggleMenu()">📚 Formations</a>
+  <a onclick="afficherPage('apropos');toggleMenu()">🏫 À propos</a>
+  <a onclick="afficherPage('contact');toggleMenu()">✉️ Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE ACCUEIL
+══════════════════════════════════════════════════════ -->
+<div id="page-accueil" class="page active">
+
+  <!-- HÉROS -->
+  <div class="heros">
+    <div class="heros-contenu">
+      <div class="badge-heros">Département d'Enseignement Fondamentaux en Education</div>
+      <h1>La Cité des <em>Experts en Éducation</em></h1>
+      <p class="heros-sous-titre">Formation de qualité, excellence académique et employabilité au service du développement éducatif du Cameroun et de l'Afrique Centrale.</p>
+      <div class="heros-actions">
+        <button class="btn-principal" onclick="afficherPage('contact')">S'inscrire maintenant →</button>
+        <button class="btn-secondaire" onclick="afficherPage('formations')">Découvrir les formations</button>
+      </div>
+    </div>
+    <div class="heros-visuel">
+      <div class="grille-stats">
+        <div class="stat-carte">
+          <div class="stat-nombre">3</div>
+          <div class="stat-label">Spécialités académiques de référence</div>
+        </div>
+        <div class="stat-carte">
+          <div class="stat-nombre">LMD</div>
+          <div class="stat-label">Licence · Master · Doctorat</div>
+        </div>
+        <div class="stat-carte">
+          <div class="stat-nombre">94%</div>
+          <div class="stat-label">Taux d'insertion professionnelle</div>
+        </div>
+        <div class="stat-carte">
+          <div class="stat-nombre">5+</div>
+          <div class="stat-label">Enseignants-chercheurs spécialisés</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION RAPIDE -->
+  <div class="nav-rapide">
+    <div class="grille-nav-rapide">
+      <div class="item-nav-rapide" onclick="afficherPage('etudiants')">
+        <div class="emoji-nav">🎓</div>
+        <div class="contenu-nav">
+          <div class="etiquette">Pour les Étudiants</div>
+          <h3>Construisez Votre Avenir Académique</h3>
+          <p>Explorez les parcours Licence, Master et Doctorat pour devenir un spécialiste de l'éducation reconnu au Cameroun et à l'international.</p>
+          <div class="lien-carte" style="margin-top:24px;">Voir les parcours →</div>
+        </div>
+      </div>
+      <div class="item-nav-rapide" onclick="afficherPage('professeurs')">
+        <div class="emoji-nav">🔬</div>
+        <div class="contenu-nav">
+          <div class="etiquette">Pour les Enseignants-Chercheurs</div>
+          <h3>Recherche & Excellence Pédagogique</h3>
+          <p>Rejoignez une communauté académique engagée dans la recherche en sciences de l'éducation et la coopération scientifique africaine.</p>
+          <div class="lien-carte" style="margin-top:24px;">En savoir plus →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORMATIONS APERÇU -->
+  <section>
+    <div class="etiquette">Nos Spécialités</div>
+    <h2 class="titre-section">Trois Disciplines,<br>Un Objectif d'Excellence</h2>
+    <p class="sous-titre">Des programmes interdisciplinaires qui allient rigueur scientifique et pertinence professionnelle pour former les cadres de l'éducation de demain.</p>
+    <div class="grille-cartes">
+      <div class="carte" onclick="afficherPage('formations')">
+        <div class="icone-carte">🧠</div>
+        <h3>Psychologie de l'Éducation</h3>
+        <p>Comprendre les processus d'apprentissage, de développement cognitif et émotionnel pour améliorer les pratiques éducatives.</p>
+        <div class="lien-carte">Explorer →</div>
+      </div>
+      <div class="carte" onclick="afficherPage('formations')">
+        <div class="icone-carte">🌍</div>
+        <h3>Sociologie & Anthropologie de l'Éducation</h3>
+        <p>Analyser les dynamiques sociales et culturelles qui façonnent les systèmes éducatifs pour promouvoir l'équité et l'inclusion.</p>
+        <div class="lien-carte">Explorer →</div>
+      </div>
+      <div class="carte" onclick="afficherPage('formations')">
+        <div class="icone-carte">💻</div>
+        <h3>TIC en Éducation</h3>
+        <p>Intégrer les technologies de l'information et de la communication pour transformer et moderniser les pratiques d'enseignement.</p>
+        <div class="lien-carte">Explorer →</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATOUTS -->
+  <section class="bg-creme">
+    <div class="centre">
+      <div class="etiquette">Pourquoi nous choisir</div>
+      <h2 class="titre-section">Excellence, Employabilité, Impact</h2>
+      <p class="sous-titre">Notre département forme les experts qui répondent aux besoins réels du secteur éducatif camerounais et africain.</p>
+    </div>
+    <div class="grille-atouts">
+      <div class="atout">
+        <div class="icone-atout" style="background:linear-gradient(135deg,#0B5C2E,#157A3E);">🏆</div>
+        <h4>Rigueur Académique</h4>
+        <p>Des enseignements fondés sur la recherche, dispensés par des enseignants-chercheurs spécialisés et reconnus dans leurs domaines.</p>
+      </div>
+      <div class="atout">
+        <div class="icone-atout" style="background:linear-gradient(135deg,#157A3E,#1FA050);">💼</div>
+        <h4>Forte Employabilité</h4>
+        <p>Nos diplômés intègrent l'enseignement, la recherche, les ONG, les ministères et le secteur privé de l'éducation au Cameroun et en Afrique.</p>
+      </div>
+      <div class="atout">
+        <div class="icone-atout" style="background:linear-gradient(135deg,#042D12,#0B5C2E);">🔬</div>
+        <h4>Recherche & Innovation</h4>
+        <p>Un environnement de recherche active qui valorise la production scientifique et contribue à l'amélioration des politiques éducatives nationales.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE ÉTUDIANTS
+══════════════════════════════════════════════════════ -->
+<div id="page-etudiants" class="page">
+  <div class="entete-page">
+    <div class="entete-tag">Pour les Étudiants</div>
+    <h1>Votre Parcours Académique Commence Ici</h1>
+    <p>Du premier cycle à la recherche doctorale, nous offrons des formations rigoureuses pour faire de vous un spécialiste des sciences de l'éducation.</p>
+  </div>
+
+  <section>
+    <div class="etiquette">Parcours Académiques</div>
+    <h2 class="titre-section">Le Système LMD</h2>
+    <p class="sous-titre">Trois niveaux de formation pour accompagner votre développement professionnel et académique à chaque étape de votre trajectoire.</p>
+    <div class="grille-parcours">
+      <div class="parcours-carte">
+        <div class="parcours-entete licence">
+          <div class="parcours-niveau">Premier Cycle</div>
+          <h3>Licence</h3>
+          <div class="parcours-duree">⏱ 3 ans · Formation initiale</div>
+        </div>
+        <div class="parcours-corps">
+          <ul>
+            <li>Fondements des sciences de l'éducation</li>
+            <li>Introduction à la psychologie et sociologie</li>
+            <li>Initiation aux méthodes de recherche</li>
+            <li>Stages pratiques en établissements scolaires</li>
+            <li>Travaux dirigés et mémoire de fin de cycle</li>
+          </ul>
+        </div>
+      </div>
+      <div class="parcours-carte">
+        <div class="parcours-entete master">
+          <div class="parcours-niveau">Deuxième Cycle</div>
+          <h3>Master</h3>
+          <div class="parcours-duree">⏱ 2 ans · Spécialisation avancée</div>
+        </div>
+        <div class="parcours-corps">
+          <ul>
+            <li>Approfondissement dans la spécialité choisie</li>
+            <li>Méthodologies quantitatives et qualitatives</li>
+            <li>Séminaires de recherche spécialisés</li>
+            <li>Collaboration avec des équipes de recherche</li>
+            <li>Mémoire de master avec soutenance publique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="parcours-carte">
+        <div class="parcours-entete doctorat">
+          <div class="parcours-niveau">Troisième Cycle</div>
+          <h3>Doctorat</h3>
+          <div class="parcours-duree">⏱ 3 à 5 ans · Recherche originale</div>
+        </div>
+        <div class="parcours-corps">
+          <ul>
+            <li>Contribution originale à la connaissance</li>
+            <li>Encadrement par des directeurs de thèse experts</li>
+            <li>Publications dans des revues scientifiques</li>
+            <li>Participations aux conférences internationales</li>
+            <li>Préparation à une carrière académique ou R&D</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONDITIONS D'ADMISSION -->
+  <section class="bg-creme">
+    <div class="etiquette">Conditions d'Accès</div>
+    <h2 class="titre-section">Comment Candidater</h2>
+    <p class="sous-titre">Un processus transparent et équitable pour accueillir les meilleurs candidats issus de tous les horizons académiques.</p>
+    <div class="grille-admission">
+      <div class="boite-etapes">
+        <h3>Étapes d'Inscription</h3>
+        <div class="etape">
+          <div class="etape-num">1</div>
+          <div class="etape-info">
+            <h4>Constitution du Dossier</h4>
+            <p>Rassemblez vos diplômes, relevés de notes, pièce d'identité et lettre de motivation.</p>
+          </div>
+        </div>
+        <div class="etape">
+          <div class="etape-num">2</div>
+          <div class="etape-info">
+            <h4>Dépôt de la Candidature</h4>
+            <p>Déposez votre dossier au secrétariat du département ou envoyez-le par voie électronique.</p>
+          </div>
+        </div>
+        <div class="etape">
+          <div class="etape-num">3</div>
+          <div class="etape-info">
+            <h4>Examen du Dossier</h4>
+            <p>La commission pédagogique examine votre profil académique dans un délai de 3 semaines.</p>
+          </div>
+        </div>
+        <div class="etape">
+          <div class="etape-num">4</div>
+          <div class="etape-info">
+            <h4>Entretien & Décision</h4>
+            <p>Les candidats présélectionnés sont convoqués à un entretien avant la décision finale d'admission.</p>
+          </div>
+        </div>
+        <button class="btn-principal" style="margin-top:24px;" onclick="afficherPage('contact')">Déposer ma Candidature →</button>
+      </div>
+      <div class="boite-conditions">
+        <h3>Conditions d'Admission</h3>
+        <div class="condition">
+          <div class="cond-icone">📜</div>
+          <div>
+            <div class="cond-label">Accès en Licence</div>
+            <div class="cond-valeur">Baccalauréat toutes séries (A, B, C, D, E) ou équivalent reconnu par l'État camerounais</div>
+          </div>
+        </div>
+        <div class="condition">
+          <div class="cond-icone">🎓</div>
+          <div>
+            <div class="cond-label">Accès en Master</div>
+            <div class="cond-valeur">Licence en Sciences Humaines, Sciences de l'Éducation, Lettres, Philosophie, Psychologie ou domaine connexe</div>
+          </div>
+        </div>
+        <div class="condition">
+          <div class="cond-icone">📖</div>
+          <div>
+            <div class="cond-label">Accès en Doctorat</div>
+            <div class="cond-valeur">Master recherche en sciences de l'éducation ou discipline connexe, avec mémoire de qualité</div>
+          </div>
+        </div>
+        <div class="condition">
+          <div class="cond-icone">🌐</div>
+          <div>
+            <div class="cond-label">Langue d'enseignement</div>
+            <div class="cond-valeur">Français (maîtrise exigée) · Anglais (atout pour les formations internationales)</div>
+          </div>
+        </div>
+        <div class="condition">
+          <div class="cond-icone">✉️</div>
+          <div>
+            <div class="cond-label">Lettre de Motivation</div>
+            <div class="cond-valeur">Exposé de votre projet professionnel et académique (400 à 700 mots), obligatoire pour le Master et le Doctorat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉBOUCHÉS ÉTUDIANTS -->
+  <section>
+    <div class="centre">
+      <div class="etiquette">Après le Diplôme</div>
+      <h2 class="titre-section">Vos Perspectives Professionnelles</h2>
+    </div>
+    <div class="grille-cartes" style="margin-top:40px;">
+      <div class="carte">
+        <div class="icone-carte">🏫</div>
+        <h3>Enseignement</h3>
+        <p>Enseignant dans le primaire, secondaire ou supérieur ; conseiller pédagogique ; formateur en instituts de formation.</p>
+      </div>
+      <div class="carte">
+        <div class="icone-carte">🔬</div>
+        <h3>Recherche Académique</h3>
+        <p>Chercheur dans des universités ou centres de recherche ; doctorant ; auteur de publications scientifiques.</p>
+      </div>
+      <div class="carte">
+        <div class="icone-carte">🤝</div>
+        <h3>Secteur du Développement</h3>
+        <p>Chargé de programme dans des ONG, agences onusiennes ou projets de développement éducatif en Afrique.</p>
+      </div>
+      <div class="carte">
+        <div class="icone-carte">💡</div>
+        <h3>Entrepreneuriat Éducatif</h3>
+        <p>Création d'établissements scolaires, de plateformes e-learning, de centres de formation professionnelle ou de services de conseil pédagogique.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE PROFESSEURS
+══════════════════════════════════════════════════════ -->
+
+<!-- MODAL PROFESSEUR -->
+    <div id="modal-prof">
+      <div class="modal-fond" onclick="fermerModal()"></div>
+      <div class="modal-boite">
+        <button class="modal-fermer" onclick="fermerModal()">✕</button>
+        <div class="modal-entete">
+          <img id="modal-img" src="" alt="" class="modal-photo"
+              onerror="this.style.display='none';">
+          <div>
+            <div class="modal-nom" id="modal-nom"></div>
+            <div class="modal-titre" id="modal-titre"></div>
+          </div>
+        </div>
+        <div class="modal-corps">
+          <p id="modal-bio"></p>
+          <div class="modal-tags" id="modal-tags"></div>
+        </div>
+      </div>
+    </div>
+
+
+<div id="page-professeurs" class="page">
+  <div class="entete-page">
+    <div class="entete-tag">Corps Enseignant</div>
+    <h1>Savoir, Recherche & Engagement Académique</h1>
+    <p>Nos enseignants-chercheurs allient expertise scientifique, rigueur pédagogique et engagement pour l'essor des sciences de l'éducation au Cameroun.</p>
+  </div>
+
+  <!-- RESPONSABLES ACADÉMIQUES -->
+  <section>
+    <div class="etiquette">Responsables Académiques</div>
+    <h2 class="titre-section">L'Équipe Dirigeante</h2>
+    <p class="sous-titre">Des profils d'exception, reconnus pour leur excellence académique et leur contribution au développement des sciences de l'éducation.</p>
+
+    <div class="grille-profs">
+
+      <div class="prof-carte">
+        <img src="image/eyenga.png" alt="Pr Pierre-Suzanne Eyenga Onana" class="prof-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="prof-photo-placeholder" style="display:none;">👨‍🏫</div>
+        <div class="prof-info">
+          <div class="prof-nom">Pr Pierre-Suzanne Eyenga Onana</div>
+          <div class="prof-titre">Chef de Département</div>
+          <div class="prof-bio">Socio-anthropologue des littératures écrites et des civilisations d'Afrique et de la Caraïbe noire. Secrétaire exécutif de l'Équipe de Recherche en Littératures, Arts et Civilisations (ERLAC). Spécialiste des dynamiques du vivre-ensemble harmonieux dans les francographies africaines. Auteur de plus d'une centaine d'articles scientifiques et d'une douzaine d'ouvrages.</div>
+          <button class="btn-plus" onclick="ouvrirModal('Pr Pierre-Suzanne Eyenga Onana','Chef de Département','suzanne.png','Socio-anthropologue des littératures écrites et des civilisations d\'Afrique et de la Caraïbe noire. Secrétaire exécutif de l\'Équipe de Recherche en Littératures, Arts et Civilisations (ERLAC). Spécialiste des dynamiques du vivre-ensemble harmonieux dans les francographies africaines. Auteur de plus d\'une centaine d\'articles scientifiques et d\'une douzaine d\'ouvrages.','Chef de Département,Maître de Conférences')">Voir plus →</button>
+          <div class="prof-tags">
+            <span class="tag">Chef de Département</span>
+            <span class="tag">Maître de Conférences</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-carte">
+        <img src="image/kengne.png" alt="Pr Valèse MAPTO KENGNE" class="prof-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="prof-photo-placeholder" style="display:none;">👩‍🏫</div>
+        <div class="prof-info">
+          <div class="prof-nom">Pr Valèse MAPTO KENGNE</div>
+          <div class="prof-titre">Psychologue de l'Education</div>
+          <div class="prof-bio">Professeure à l'Université de Yaoundé I, spécialisée en sciences de l'éducation. Coordonne les programmes académiques et veille à l'excellence des formations dispensées au sein du département.</div>
+          <button class="btn-plus" onclick="ouvrirModal('Pr Valèse MAPTO KENGNE','Responsable Académique','image/photo-mapto.jpg','Professeure à l\'Université de Yaoundé I, spécialisée en sciences de l\'éducation. Coordonne les programmes académiques et veille à l\'excellence des formations dispensées au sein du département.','Sciences de l\'Éducation,Université de Yaoundé I')">Voir plus →</button>
+          <div class="prof-tags">
+            <span class="tag">Psychologue de l'Education</span>
+            <span class="tag">Université de Yaoundé I</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="prof-carte">
+        <img src="image/wakeu.png" alt="Dr Martial Aimé WAKEU" class="prof-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="prof-photo-placeholder" style="display:none;">👨‍🔬</div>
+        <div class="prof-info">
+          <div class="prof-nom">Dr Martial Aimé WAKEU</div>
+          <div class="prof-titre">Enseignant-Chercheur</div>
+          <div class="prof-bio">Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.</div>
+          <button class="btn-plus" onclick="ouvrirModal('Dr Martial Aimé WAKEU','Enseignant-Chercheur','image/photo-wakeu.jpg','Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l\'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.','Psychologie Sociale,Recherche')">Voir plus →</button>
+          <div class="prof-tags">
+            <span class="tag">Psychologie Sociale</span>
+            <span class="tag">Recherche</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-carte">
+        <img src="image/photo-tchawouo.jpg" alt="Dr Roger TCHAWOUO TCHOUNKEU" class="prof-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="prof-photo-placeholder" style="display:none;">👨‍⚕️</div>
+        <div class="prof-info">
+          <div class="prof-nom">Dr Roger TCHAWOUO TCHOUNKEU</div>
+          <div class="prof-titre">Médecin Radiologue · Formateur Académique</div>
+          <div class="prof-bio">Médecin radiologue exerçant à Douala, il apporte une dimension interdisciplinaire précieuse à la formation académique, enrichissant le lien entre sciences médicales et éducation.</div>
+          <button class="btn-plus" onclick="ouvrirModal('Dr Roger TCHAWOUO TCHOUNKEU','Médecin Radiologue · Formateur Académique','image/photo-tchawouo.jpg','Médecin radiologue exerçant à Douala, il apporte une dimension interdisciplinaire précieuse à la formation académique, enrichissant le lien entre sciences médicales et éducation.','Radiologie,Formation,Douala')">Voir plus →</button>
+          <div class="prof-tags">
+            <span class="tag">Radiologie</span>
+            <span class="tag">Formation</span>
+            <span class="tag">Douala</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="prof-carte">
+        <img src="image/awa.jpeg" alt="Dr TCHOUAFFI KOUM AWA" class="prof-photo"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="prof-photo-placeholder" style="display:none;">👩‍🔬</div>
+        <div class="prof-info">
+          <div class="prof-nom">Dr TCHOUAFFI KOUM AWA</div>
+          <div class="prof-titre">PhD · Anthropologie Médicale</div>
+          <div class="prof-bio">PhD en anthropologie médicale. Chercheuse au Centre d'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.</div>
+          <button class="btn-plus" onclick="ouvrirModal('Dr TCHOUAFFI KOUM AWA','PhD · Anthropologie Médicale','image/photo-tchouaffi.jpg','PhD en anthropologie médicale. Chercheuse au Centre d\'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.','Anthropologie Médicale,CPSHP,Recherche')">Voir plus →</button>
+          <div class="prof-tags">
+            <span class="tag">Anthropologie Médicale</span>
+            <span class="tag">Education and Promotion</span>
+           
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RECHERCHE & COLLABORATION -->
+  <section class="bg-creme">
+    <div class="etiquette">Recherche Scientifique</div>
+    <h2 class="titre-section">Axes de Recherche & Collaboration</h2>
+    <div class="grille-recherche">
+      <ul class="liste-recherche">
+        <li>
+          <div class="res-icone">🧠</div>
+          <div>
+            <div class="res-titre">Psychologie Cognitive et Apprentissage</div>
+            <div class="res-desc">Étude des mécanismes cognitifs impliqués dans l'apprentissage et l'adaptation pédagogique en contexte africain.</div>
+          </div>
+        </li>
+        <li>
+          <div class="res-icone">🌍</div>
+          <div>
+            <div class="res-titre">Équité et Inclusion Scolaire</div>
+            <div class="res-desc">Analyse des inégalités d'accès à l'éducation au Cameroun et recommandations pour des politiques inclusives.</div>
+          </div>
+        </li>
+        <li>
+          <div class="res-icone">💻</div>
+          <div>
+            <div class="res-titre">Technologies Éducatives en Afrique</div>
+            <div class="res-desc">Conception et évaluation de dispositifs numériques adaptés aux réalités du terrain éducatif camerounais et centrafricain.</div>
+          </div>
+        </li>
+        <li>
+          <div class="res-icone">📊</div>
+          <div>
+            <div class="res-titre">Évaluation des Systèmes Éducatifs</div>
+            <div class="res-desc">Développement d'outils d'évaluation pertinents pour mesurer la qualité de l'enseignement et orienter les réformes pédagogiques.</div>
+          </div>
+        </li>
+      </ul>
+      <div class="boite-collab">
+        <h3>Partenariats Académiques &<br>Coopération Internationale</h3>
+        <p>Le département entretient des relations de coopération avec des institutions universitaires africaines et internationales, favorisant la mobilité des chercheurs et l'enrichissement mutuel.</p>
+        <div class="partenaires">
+          <span class="partenaire">Université de Yaoundé I</span>
+          <span class="partenaire">Université de Douala</span>
+          <span class="partenaire">Sorbonne Paris</span>
+          <span class="partenaire">UNESCO Dakar</span>
+          <span class="partenaire">UA / CEEAC</span>
+          <span class="partenaire">UNICEF Éducation</span>
+        </div>
+        <button class="btn-vert" onclick="afficherPage('contact')">Rejoindre l'Équipe de Recherche →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÉVELOPPEMENT PÉDAGOGIQUE -->
+  <section>
+    <div class="etiquette">Développement Professionnel</div>
+    <h2 class="titre-section">Excellence Pédagogique & Formation Continue</h2>
+    <div class="grille-cartes">
+      <div class="carte">
+        <div class="icone-carte">📚</div>
+        <h3>Innovation Pédagogique</h3>
+        <p>Ateliers de développement des pratiques d'enseignement, formation aux méthodes actives et aux approches par compétences.</p>
+      </div>
+      <div class="carte">
+        <div class="icone-carte">🌐</div>
+        <h3>Publications & Financements</h3>
+        <p>Soutien institutionnel pour la publication dans des revues indexées et l'accès aux appels à projets de recherche nationaux et internationaux.</p>
+      </div>
+      <div class="carte">
+        <div class="icone-carte">🤝</div>
+        <h3>Encadrement Doctoral</h3>
+        <p>Accompagnement structuré des doctorants par des directeurs de thèse expérimentés, avec suivi régulier et participation aux jurys.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE FORMATIONS
+══════════════════════════════════════════════════════ -->
+<div id="page-formations" class="page">
+  <div class="entete-page">
+    <div class="entete-tag">Formations Académiques</div>
+    <h1>Trois Disciplines,<br>Une Vision d'Avenir</h1>
+    <p>Chaque programme est conçu avec rigueur scientifique, pertinence professionnelle et engagement pour le développement éducatif du Cameroun.</p>
+  </div>
+
+  <!-- PSYCHOLOGIE DE L'ÉDUCATION -->
+  <div class="formation-detail">
+    <div class="formation-cote">
+      <div class="formation-cote-icone">🧠</div>
+      <h3>Psychologie de l'Éducation</h3>
+      <p>Une formation centrée sur les dimensions psychologiques de l'apprentissage et du développement humain appliqués à l'éducation.</p>
+      <div class="niveaux-tags">
+        <span class="niv-tag">Licence</span>
+        <span class="niv-tag">Master</span>
+        <span class="niv-tag">Doctorat</span>
+      </div>
+    </div>
+    <div class="formation-principal">
+      <h4>Psychologie de l'Éducation</h4>
+      <p>Cette formation explore les fondements psychologiques de l'apprentissage, de l'enseignement et du développement humain. Elle forme des spécialistes capables d'analyser les comportements d'apprentissage, d'identifier les difficultés scolaires et de proposer des interventions adaptées.</p>
+      <p>Les diplômés maîtrisent des outils d'évaluation psychopédagogique et peuvent exercer dans les établissements scolaires, les centres de formation et les institutions de recherche.</p>
+      <ul>
+        <li><span>◆</span> Théories du développement cognitif et affectif</li>
+        <li><span>◆</span> Psychopédagogie et différenciation pédagogique</li>
+        <li><span>◆</span> Troubles des apprentissages et soutien scolaire</li>
+        <li><span>◆</span> Motivation, engagement et réussite académique</li>
+        <li><span>◆</span> Psychologie scolaire et santé mentale en milieu éducatif</li>
+        <li><span>◆</span> Méthodes de recherche en psychologie de l'éducation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SOCIOLOGIE & ANTHROPOLOGIE DE L'ÉDUCATION -->
+  <div class="formation-detail">
+    <div class="formation-cote">
+      <div class="formation-cote-icone">🌍</div>
+      <h3>Sociologie & Anthropologie de l'Éducation</h3>
+      <p>Une approche critique et sociale pour analyser les systèmes éducatifs dans leurs contextes culturels, économiques et politiques.</p>
+      <div class="niveaux-tags">
+        <span class="niv-tag">Licence</span>
+        <span class="niv-tag">Master</span>
+        <span class="niv-tag">Doctorat</span>
+      </div>
+    </div>
+    <div class="formation-principal">
+      <h4>Sociologie & Anthropologie de l'Éducation</h4>
+      <p>Ce programme situe l'éducation dans son contexte social, culturel et politique. Il forme des experts capables d'analyser les inégalités éducatives, les dynamiques communautaires et les politiques d'inclusion scolaire en Afrique.</p>
+      <p>Les étudiants acquièrent une solide culture sociologique et des compétences en enquête de terrain, particulièrement précieuses pour intervenir dans des contextes multiculturels comme le Cameroun.</p>
+      <ul>
+        <li><span>◆</span> Reproduction sociale et inégalités éducatives</li>
+        <li><span>◆</span> Genre, ethnicité et accès à l'éducation</li>
+        <li><span>◆</span> Anthropologie des pratiques scolaires africaines</li>
+        <li><span>◆</span> Politique éducative et réformes des systèmes</li>
+        <li><span>◆</span> Relations famille-école en contexte camerounais</li>
+        <li><span>◆</span> Enquêtes ethnographiques et méthodes qualitatives</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TIC EN ÉDUCATION -->
+  <div class="formation-detail">
+    <div class="formation-cote">
+      <div class="formation-cote-icone">💻</div>
+      <h3>TIC en Éducation</h3>
+      <p>Former des experts de l'intégration pédagogique des technologies pour moderniser l'enseignement en Afrique subsaharienne.</p>
+      <div class="niveaux-tags">
+        <span class="niv-tag">Licence</span>
+        <span class="niv-tag">Master</span>
+        <span class="niv-tag">Doctorat</span>
+      </div>
+    </div>
+    <div class="formation-principal">
+      <h4>TIC en Éducation</h4>
+      <p>Cette formation prépare des spécialistes capables d'intégrer les technologies de l'information et de la communication dans des contextes éducatifs variés. Elle conjugue fondements pédagogiques, ingénierie de formation et maîtrise des outils numériques.</p>
+      <p>Dans un contexte africain en pleine transformation numérique, nos diplômés répondent à une demande croissante des établissements, ministères et organisations internationales.</p>
+      <ul>
+        <li><span>◆</span> Conception de dispositifs d'enseignement à distance (e-learning)</span></li>
+        <li><span>◆</span> Ingénierie pédagogique et design d'apprentissage</li>
+        <li><span>◆</span> Intelligence artificielle et éducation adaptative</li>
+        <li><span>◆</span> Équité numérique et accès aux TIC en Afrique</li>
+        <li><span>◆</span> Plateformes LMS et outils collaboratifs</li>
+        <li><span>◆</span> Production de ressources éducatives numériques</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION DÉBOUCHÉS -->
+  <div class="section-debouches">
+    <div class="centre">
+      <div class="etiquette">Débouchés Professionnels</div>
+      <h2 class="titre-section" style="color:var(--blanc);">Votre Diplôme Ouvre des Portes</h2>
+      <p class="sous-titre" style="color:rgba(255,255,255,0.65);margin:0 auto 48px;">Nos diplômés s'intègrent dans des secteurs variés et jouent un rôle clé dans le développement éducatif du Cameroun et de l'Afrique Centrale.</p>
+    </div>
+    <div class="grille-debouches">
+      <div class="debouche-carte">
+        <div class="debouche-icone">🏫</div>
+        <h4>Enseignement</h4>
+        <p>Enseignant dans le primaire, secondaire et supérieur ; conseiller pédagogique ; inspecteur de l'enseignement.</p>
+      </div>
+      <div class="debouche-carte">
+        <div class="debouche-icone">🔬</div>
+        <h4>Recherche</h4>
+        <p>Chercheur en université ou centre de recherche ; directeur de thèse ; expert scientifique auprès d'institutions.</p>
+      </div>
+      <div class="debouche-carte">
+        <div class="debouche-icone">🏛</div>
+        <h4>Conseil & Expertise</h4>
+        <p>Consultant pédagogique pour écoles, entreprises et gouvernements ; expert en évaluation des systèmes éducatifs.</p>
+      </div>
+      <div class="debouche-carte">
+        <div class="debouche-icone">🌱</div>
+        <h4>Développement & ONG</h4>
+        <p>Chargé de programme éducatif dans des ONG, agences onusiennes, projets bilatéraux ou organisations régionales africaines.</p>
+      </div>
+      <div class="debouche-carte">
+        <div class="debouche-icone">💡</div>
+        <h4>Entrepreneuriat Éducatif</h4>
+        <p>Création d'établissements scolaires, de centres de formation, de plateformes numériques ou de services d'appui pédagogique.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;">
+      <button class="btn-principal" onclick="afficherPage('contact')">Demander une Brochure →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE À PROPOS
+══════════════════════════════════════════════════════ -->
+<div id="page-apropos" class="page">
+  <div class="heros-apropos">
+    <div class="entete-tag">Notre Institution</div>
+    <h1>Un Département au Service de l'Excellence Éducative</h1>
+    <p>Fondé pour répondre au manque de spécialistes qualifiés en sciences de l'éducation au Cameroun, notre département forme les cadres qui transforment les systèmes éducatifs africains.</p>
+  </div>
+
+  <!-- VISION, MISSION, VALEURS -->
+  <section>
+    <div class="centre">
+      <div class="etiquette">Nos Fondements</div>
+      <h2 class="titre-section">Vision, Mission & Valeurs</h2>
+    </div>
+    <div class="grille-vmv" style="margin-top:40px;">
+      <div class="vmv-carte">
+        <div class="vmv-icone">🔭</div>
+        <h4>Notre Vision</h4>
+        <p>Devenir le centre de référence en Afrique Centrale pour la formation de spécialistes en sciences de l'éducation, capables de concevoir, d'évaluer et de transformer les systèmes éducatifs.</p>
+      </div>
+      <div class="vmv-carte">
+        <div class="vmv-icone">🎯</div>
+        <h4>Notre Mission</h4>
+        <p>Réduire le déficit de cadres qualifiés en sciences de l'éducation au Cameroun en offrant une formation académique rigoureuse, pertinente et ancrée dans les réalités africaines.</p>
+      </div>
+      <div class="vmv-carte">
+        <div class="vmv-icone">💎</div>
+        <h4>Nos Valeurs</h4>
+        <p>Excellence académique · Intégrité scientifique · Professionnalisme · Inclusion et équité · Engagement pour le développement durable de l'éducation africaine.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTOIRE -->
+  <section class="bg-creme">
+    <div class="histoire-grille">
+      <div class="histoire-texte">
+        <div class="etiquette">Notre Histoire</div>
+        <h2>Un Département Fondé sur un Besoin Réel</h2>
+        <div class="diviseur"></div>
+        <p>Le Département des Sciences de l'Éducation a été créé en réponse à un constat alarmant : le Cameroun manque cruellement de spécialistes formés scientifiquement pour concevoir, animer et évaluer ses systèmes éducatifs à tous les niveaux.</p>
+        <p>Rattaché à la Faculté des Sciences de l'Éducation, ce département propose un enseignement de qualité en psychologie de l'éducation, en sociologie et anthropologie de l'éducation, et en TIC en éducation, dans le cadre du système LMD.</p>
+        <p>Notre ambition est de produire des experts capables d'intervenir dans les établissements scolaires, les ministères, les organisations internationales et les centres de recherche, pour un impact réel et durable sur l'éducation au Cameroun et en Afrique.</p>
+        <ul class="liste-valeurs">
+          <li>Formation conforme au système LMD (Licence-Master-Doctorat)</li>
+          <li>Insertion dans le réseau universitaire national et international</li>
+          <li>Engagement pour la qualité de l'éducation en Afrique Centrale</li>
+          <li>Approche interdisciplinaire alliant sciences humaines et technologies</li>
+        </ul>
+      </div>
+      <div>
+        <div class="visuel-histoire">
+          <div class="grand-num">FSE</div>
+          <div class="grand-num-label">FACULTÉ DES SCIENCES DE L'ÉDUCATION</div>
+          <div class="petits-chiffres">
+            <div class="petit-stat">
+              <div class="petit-stat-num" style="color:#0B5C2E;">3</div>
+              <div class="petit-stat-label">Spécialités de formation</div>
+            </div>
+            <div class="petit-stat">
+              <div class="petit-stat-num" style="color:#073D1C;">5+</div>
+              <div class="petit-stat-label">Enseignants-chercheurs</div>
+            </div>
+            <div class="petit-stat">
+              <div class="petit-stat-num" style="color:#1FA050;">LMD</div>
+              <div class="petit-stat-label">Système d'enseignement</div>
+            </div>
+            <div class="petit-stat">
+              <div class="petit-stat-num" style="color:#0B5C2E;">🇨🇲</div>
+              <div class="petit-stat-label">Cameroun & Afrique Centrale</div>
+            </div>
+          </div>
+          <div style="margin-top:28px;">
+            <button class="btn-principal" onclick="afficherPage('contact')">Nous Contacter →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PAGE CONTACT
+══════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="entete-page">
+    <div class="entete-tag">Nous Contacter</div>
+    <h1>Nous Sommes à Votre Écoute</h1>
+    <p>Étudiants, chercheurs, partenaires institutionnels — notre équipe répond à toutes vos questions dans les plus brefs délais.</p>
+  </div>
+
+  <section>
+    <div class="contact-grille">
+      <div class="contact-info">
+        <h2>Coordonnées du Département</h2>
+        <div class="diviseur"></div>
+        <p>Pour toute demande d'information sur les formations, les admissions ou les partenariats, contactez-nous par téléphone, WhatsApp ou par le formulaire ci-contre.</p>
+
+        <div class="item-contact">
+          <div class="icone-contact">📍</div>
+          <div class="detail-contact">
+            <h4>Adresse</h4>
+            <p>Département des Sciences de l'Éducation<br>Faculté des Sciences de l'Éducation<br>Yaoundé, Cameroun</p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact">📞</div>
+          <div class="detail-contact">
+            <h4>Téléphone</h4>
+            <p><a href="tel:+237000000000">+237 000 000 000</a></p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact">✉️</div>
+          <div class="detail-contact">
+            <h4>Adresse e-mail</h4>
+            <p><a href="mailto:dept.sciences.education@univ-yaounde.cm">dept.sciences.education@univ-yaounde.cm</a></p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact">🕐</div>
+          <div class="detail-contact">
+            <h4>Heures d'ouverture</h4>
+            <p>Lundi – Vendredi : 7h30 – 15h30<br>Samedi : 8h00 – 12h00</p>
+          </div>
+        </div>
+
+        <a class="whatsapp" href="https://wa.me/237000000000" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Discuter sur WhatsApp
+        </a>
+      </div>
+
+      <div class="formulaire-boite">
+        <h3>Envoyer un Message</h3>
+        <div class="rangee">
+          <div class="groupe">
+            <label>Prénom</label>
+            <input type="text" placeholder="Jean">
+          </div>
+          <div class="groupe">
+            <label>Nom</label>
+            <input type="text" placeholder="Mbarga">
+          </div>
+        </div>
+        <div class="groupe">
+          <label>Adresse e-mail</label>
+          <input type="email" placeholder="votre@email.com">
+        </div>
+        <div class="groupe">
+          <label>Téléphone / WhatsApp</label>
+          <input type="tel" placeholder="+237 6XX XXX XXX">
+        </div>
+        <div class="groupe">
+          <label>Je suis ...</label>
+          <select>
+            <option value="">Sélectionnez votre profil</option>
+            <option>Étudiant(e) en Licence</option>
+            <option>Étudiant(e) en Master</option>
+            <option>Candidat(e) au Doctorat</option>
+            <option>Enseignant(e) / Chercheur(e)</option>
+            <option>Institution / Partenaire</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="groupe">
+          <label>Sujet</label>
+          <input type="text" placeholder="Demande d'inscription · Renseignements · Partenariat · Autre">
+        </div>
+        <div class="groupe">
+          <label>Votre Message</label>
+          <textarea placeholder="Décrivez votre demande ou vos questions..."></textarea>
+        </div>
+        <button class="btn-envoyer" onclick="envoyerFormulaire()">Envoyer le Message →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALISATION -->
+  <div class="section-carte">
+    <div class="centre">
+      <div class="etiquette">Localisation</div>
+      <h2 class="titre-section">Nous Trouver</h2>
+      <p class="sous-titre" style="margin:0 auto;">Faculté des Sciences de l'Éducation · Yaoundé, Cameroun</p>
+    </div>
+    <div class="carte-carte">
+      <div class="carte-label">
+        <span style="font-size:48px;">📍</span>
+        <p>Intégrez ici votre carte Google Maps<br><small style="opacity:0.6;">(Remplacer par un iframe Google Maps)</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ PIED DE PAGE ══════════════════ -->
+<footer>
+  <div class="bandeau-or"></div>
+  <div class="pied-grille">
+    <div class="pied-marque">
+      <div class="logo" onclick="afficherPage('accueil')" style="cursor:pointer;">
+        <div class="logo-insigne">
+          <img src="image/logo.jpg" alt="Logo FSE"
+               onerror="this.style.display='none';this.parentElement.innerHTML='FSE';">
+        </div>
+        <div class="logo-texte">
+          <strong>Faculté des Sciences de l'Éducation</strong>
+          <span>Département des Sciences de l'Éducation · Cameroun</span>
+        </div>
+      </div>
+      <p style="margin-top:16px;font-size:13px;">Former les experts qui transforment les systèmes éducatifs du Cameroun et de l'Afrique Centrale grâce à la rigueur scientifique et l'engagement académique.</p>
+    </div>
+    <div class="pied-col">
+      <h5>Navigation</h5>
+      <ul>
+        <li><a onclick="afficherPage('accueil')">Accueil</a></li>
+        <li><a onclick="afficherPage('etudiants')">Étudiants</a></li>
+        <li><a onclick="afficherPage('professeurs')">Professeurs</a></li>
+        <li><a onclick="afficherPage('formations')">Formations</a></li>
+        <li><a onclick="afficherPage('apropos')">À propos</a></li>
+        <li><a onclick="afficherPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="pied-col">
+      <h5>Formations</h5>
+      <ul>
+        <li><a onclick="afficherPage('formations')">Psychologie de l'Éducation</a></li>
+        <li><a onclick="afficherPage('formations')">Sociologie de l'Éducation</a></li>
+        <li><a onclick="afficherPage('formations')">TIC en Éducation</a></li>
+        <li><a onclick="afficherPage('formations')">Débouchés Professionnels</a></li>
+        <li><a onclick="afficherPage('etudiants')">Licence · Master · Doctorat</a></li>
+      </ul>
+    </div>
+    <div class="pied-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+237000000000">📞 +237 000 000 000</a></li>
+        <li><a href="https://wa.me/237000000000" target="_blank">💬 WhatsApp</a></li>
+        <li><a href="mailto:dept.sciences.education@univ-yaounde.cm">✉️ E-mail</a></li>
+        <li><a onclick="afficherPage('contact')">Formulaire de contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="pied-bas">
+    <span>© 2025 Département des Sciences de l'Éducation — Faculté des Sciences de l'Éducation · Cameroun</span>
+    <span>Excellence · Intégrité · Impact</span>
+  </div>
+</footer>
+
+<!-- ══════════════════ JAVASCRIPT ══════════════════ -->
+<script>
+/* ── NAVIGATION ── */
+function afficherPage(nom) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-liens a').forEach(a => a.classList.remove('actif'));
+  const page = document.getElementById('page-' + nom);
+  const lien = document.getElementById('nav-' + nom);
+  if (page) page.classList.add('active');
+  if (lien) lien.classList.add('actif');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  animer();
+}
+
+/* ── MENU MOBILE ── */
+function toggleMenu() {
+  document.getElementById('menuMobile').classList.toggle('ouvert');
+}
+
+/* ── DÉFILEMENT NAV ── */
+window.addEventListener('scroll', () => {
+  document.getElementById('barre-nav').classList.toggle('defilé', window.scrollY > 20);
+});
+
+/* ── ANIMATION D'ENTRÉE ── */
+function animer() {
+  const elements = document.querySelectorAll(
+    '.carte, .parcours-carte, .prof-carte, .atout, .vmv-carte, .debouche-carte, .stat-carte'
+  );
+  elements.forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 70 + i * 55);
+  });
+}
+
+/* ── FORMULAIRE ── */
+function envoyerFormulaire() {
+  const btn = document.querySelector('.btn-envoyer');
+  btn.textContent = '✓ Message envoyé avec succès !';
+  btn.style.background = 'linear-gradient(135deg,#0B5C2E,#157A3E)';
+  setTimeout(() => {
+    btn.textContent = 'Envoyer le Message →';
+    btn.style.background = '';
+  }, 3500);
+}
+
+/* ── INIT ── */
+animer();
+</script>
+
+<!-- ══════════════════════════════════════════════════════
+     CHATBOT FSE — STYLES
+══════════════════════════════════════════════════════ -->
+<style>
+/* Bouton flottant */
+#chat-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 2000;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: linear-gradient(135deg, #0B5C2E, #157A3E);
+  border: none; cursor: pointer;
+  box-shadow: 0 6px 24px rgba(11,92,46,0.45);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s;
+  animation: pulse-chat 2.5s infinite;
+}
+#chat-btn:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(11,92,46,0.55); }
+#chat-btn svg { transition: 0.3s; }
+#chat-btn.ouvert svg.ico-chat { display: none; }
+#chat-btn.ouvert svg.ico-fermer { display: block !important; }
+
+@keyframes pulse-chat {
+  0%,100% { box-shadow: 0 6px 24px rgba(11,92,46,0.45), 0 0 0 0 rgba(31,160,80,0.30); }
+  50%      { box-shadow: 0 6px 24px rgba(11,92,46,0.45), 0 0 0 12px rgba(11,92,46,0); }
+}
+
+/* Badge non-lu */
+#chat-badge {
+  position: absolute; top: -4px; right: -4px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #1FA050; color: #FFFFFF;
+  font-size: 11px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--blanc);
+  animation: bondir 0.5s ease;
+}
+@keyframes bondir { 0%,100%{transform:scale(1)} 50%{transform:scale(1.3)} }
+
+/* Fenêtre chat */
+#chat-fenetre {
+  position: fixed; bottom: 100px; right: 28px; z-index: 1999;
+  width: 370px; max-height: 560px;
+  background: var(--blanc); border-radius: 20px;
+  box-shadow: 0 24px 72px rgba(11,92,46,0.22), 0 4px 16px rgba(11,92,46,0.12);
+  display: none; flex-direction: column; overflow: hidden;
+  border: 1px solid rgba(11,92,46,0.1);
+  animation: apparaitre 0.35s cubic-bezier(0.34,1.56,0.64,1);
+}
+#chat-fenetre.visible { display: flex; }
+
+@keyframes apparaitre {
+  from { opacity:0; transform: scale(0.85) translateY(20px); transform-origin: bottom right; }
+  to   { opacity:1; transform: scale(1) translateY(0); }
+}
+
+/* En-tête */
+#chat-entete {
+  background: linear-gradient(135deg, #0B5C2E, #157A3E);
+  padding: 16px 18px;
+  display: flex; align-items: center; gap: 12px;
+  border-bottom: 2px solid var(--or);
+  flex-shrink: 0;
+}
+.chat-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--or), var(--or-light));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.chat-titre { flex: 1; }
+.chat-titre strong { display: block; font-size: 14px; color: var(--blanc); font-weight: 700; }
+.chat-titre span   { font-size: 11px; color: rgba(255,255,255,0.6); }
+.chat-statut {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: rgba(255,255,255,0.7);
+}
+.point-vert {
+  width: 8px; height: 8px; border-radius: 50%; background: #4ADE80;
+  animation: clignoter 2s infinite;
+}
+@keyframes clignoter { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+/* Zone messages */
+#chat-messages {
+  flex: 1; overflow-y: auto; padding: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+  background: #F0FAF4;
+  scroll-behavior: smooth;
+}
+#chat-messages::-webkit-scrollbar { width: 4px; }
+#chat-messages::-webkit-scrollbar-track { background: transparent; }
+#chat-messages::-webkit-scrollbar-thumb { background: rgba(11,92,46,0.15); border-radius: 4px; }
+
+/* Bulles */
+.bulle {
+  max-width: 88%; padding: 11px 14px; border-radius: 16px;
+  font-size: 13.5px; line-height: 1.6; word-break: break-word;
+  animation: glisser 0.3s ease;
+}
+@keyframes glisser { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+.bulle.bot {
+  background: var(--blanc); color: var(--texte);
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 6px rgba(11,92,46,0.08);
+  border: 1px solid rgba(11,92,46,0.07);
+  align-self: flex-start;
+}
+.bulle.user {
+  background: linear-gradient(135deg, #0B5C2E, #157A3E);
+  color: var(--blanc); border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+
+/* Indicateur de frappe */
+.frappe {
+  display: flex; gap: 5px; align-items: center;
+  padding: 12px 14px; background: var(--blanc);
+  border-radius: 16px; border-bottom-left-radius: 4px;
+  box-shadow: 0 1px 6px rgba(11,92,46,0.08);
+  border: 1px solid rgba(11,92,46,0.07);
+  align-self: flex-start; width: fit-content;
+}
+.frappe span {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--bleu-light); animation: rebond 1.2s infinite;
+}
+.frappe span:nth-child(2) { animation-delay: 0.2s; }
+.frappe span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes rebond { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+/* Questions rapides */
+#chat-rapides {
+  padding: 10px 14px 6px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+  background: #F0FAF4;
+  border-top: 1px solid rgba(11,92,46,0.06);
+  flex-shrink: 0;
+}
+.q-rapide {
+  font-size: 11.5px; padding: 5px 11px;
+  background: var(--blanc); border: 1.5px solid rgba(11,92,46,0.15);
+  border-radius: 50px; color: var(--bleu); font-weight: 600;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.q-rapide:hover { background: #0B5C2E; color: #FFFFFF; border-color: #0B5C2E; }
+
+/* Zone saisie */
+#chat-saisie {
+  display: flex; gap: 8px; align-items: flex-end;
+  padding: 12px 14px; background: var(--blanc);
+  border-top: 1px solid rgba(11,92,46,0.08);
+  flex-shrink: 0;
+}
+#chat-input {
+  flex: 1; border: 1.5px solid rgba(11,92,46,0.15);
+  border-radius: 10px; padding: 9px 13px;
+  font-size: 13.5px; font-family: 'Source Sans 3', sans-serif;
+  color: var(--texte); background: var(--creme);
+  outline: none; resize: none; max-height: 100px;
+  transition: border-color 0.2s;
+  line-height: 1.5;
+}
+#chat-input:focus { border-color: var(--bleu-light); background: var(--blanc); }
+#chat-input::placeholder { color: var(--texte-doux); }
+#chat-envoyer {
+  width: 38px; height: 38px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, #0B5C2E, #157A3E);
+  border: none; cursor: pointer; color: var(--blanc);
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+#chat-envoyer:hover { background: #1FA050; transform: scale(1.05); }
+#chat-envoyer:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+/* Responsive mobile */
+@media (max-width: 480px) {
+  #chat-fenetre { width: calc(100vw - 24px); right: 12px; bottom: 88px; }
+  #chat-btn { bottom: 18px; right: 18px; }
+}
+</style>
+
+<!-- ══════════════════════════════════════════════════════
+     CHATBOT FSE — HTML
+══════════════════════════════════════════════════════ -->
+
+<!-- Bouton flottant -->
+<button id="chat-btn" onclick="toggleChat()" title="Assistant FSE">
+  <div id="chat-badge">1</div>
+  <!-- Icône chat -->
+  <svg class="ico-chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+  </svg>
+  <!-- Icône fermer (caché par défaut) -->
+  <svg class="ico-fermer" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" style="display:none;">
+    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+</button>
+
+<!-- Fenêtre du chatbot -->
+<div id="chat-fenetre">
+
+  <!-- En-tête -->
+  <div id="chat-entete">
+    <div class="chat-avatar">🎓</div>
+    <div class="chat-titre">
+      <strong>Assistant FSE</strong>
+      <span>Faculté des Sciences de l'Éducation</span>
+    </div>
+    <div class="chat-statut">
+      <div class="point-vert"></div>
+      <span>En ligne</span>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="chat-messages"></div>
+
+  <!-- Questions rapides -->
+  <div id="chat-rapides">
+    <button class="q-rapide" onclick="envoyerRapide('Quelles sont les formations disponibles ?')">📚 Formations</button>
+    <button class="q-rapide" onclick="envoyerRapide('Comment s\'inscrire ?')">📝 Inscription</button>
+    <button class="q-rapide" onclick="envoyerRapide('Quels sont les débouchés ?')">💼 Débouchés</button>
+    <button class="q-rapide" onclick="envoyerRapide('Qui sont les enseignants ?')">👨‍🏫 Professeurs</button>
+    <button class="q-rapide" onclick="envoyerRapide('Comment vous contacter ?')">📞 Contact</button>
+  </div>
+
+  <!-- Saisie -->
+  <div id="chat-saisie">
+    <textarea id="chat-input" placeholder="Posez votre question..." rows="1"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();envoyerMessage();}"
+      oninput="ajusterHauteur(this)"></textarea>
+    <button id="chat-envoyer" onclick="envoyerMessage()" title="Envoyer">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     CHATBOT FSE — JAVASCRIPT
+══════════════════════════════════════════════════════ -->
+<script>
+(function() {
+
+// ── CONTEXTE SYSTÈME DU CHATBOT ──
+const SYSTEME = `Tu es l'assistant virtuel officiel du Département des Sciences de l'Éducation de la Faculté des Sciences de l'Éducation au Cameroun. Tu réponds UNIQUEMENT en français, avec un ton professionnel, bienveillant et académique.
+
+INFORMATIONS SUR LE DÉPARTEMENT :
+
+📍 INSTITUTION : Faculté des Sciences de l'Éducation — Département des Sciences de l'Éducation, Yaoundé, Cameroun.
+
+🎓 FORMATIONS (Système LMD) :
+1. Psychologie de l'Éducation : processus d'apprentissage, développement cognitif, psychopédagogie, troubles des apprentissages, motivation scolaire.
+2. Sociologie et Anthropologie de l'Éducation : inégalités éducatives, politiques scolaires, dynamiques socioculturelles, inclusion, genre et éducation.
+3. TIC en Éducation : e-learning, ingénierie pédagogique, intelligence artificielle en éducation, LMS, ressources numériques.
+
+📚 NIVEAUX : Licence (3 ans) · Master (2 ans) · Doctorat (3–5 ans)
+
+📋 CONDITIONS D'ADMISSION :
+- Licence : Baccalauréat toutes séries (A, B, C, D, E) ou équivalent
+- Master : Licence en sciences humaines, lettres, psychologie, philosophie ou domaine connexe
+- Doctorat : Master recherche avec mémoire de qualité
+- Langue : Français maîtrisé, anglais est un atout
+- Dossier : relevés de notes, diplômes, lettre de motivation, pièce d'identité
+
+👩‍🏫 RESPONSABLES ACADÉMIQUES :
+- Pr Victor Claude EYENGA : Chef de Département, neurochirurgien et Maître de Conférences à la Faculté de Médecine de Yaoundé I
+- Pr Valèse MAPTO KENGNE : Responsable académique à l'Université de Yaoundé I, spécialisée en sciences de l'éducation
+- Dr Martial Aimé WAKEU : Docteur en psychologie sociale, enseignant à la FSE
+- Dr Roger TCHAWOUO TCHOUNKEU : Médecin radiologue à Douala, formateur académique
+- Dr TCHOUAFFI KOUM AWA : PhD en anthropologie médicale, chercheuse au CPSHP
+
+💼 DÉBOUCHÉS PROFESSIONNELS :
+- Enseignement : primaire, secondaire, supérieur, conseiller pédagogique, inspecteur
+- Recherche : universités, centres de recherche, publications scientifiques
+- Conseil & Expertise : consultant pédagogique, expert en évaluation, formateur
+- Développement : ONG, agences onusiennes (UNICEF, UNESCO), projets bilatéraux
+- Entrepreneuriat éducatif : écoles privées, centres de formation, e-learning, EdTech
+
+📞 CONTACT :
+- Téléphone / WhatsApp : +237 000 000 000
+- Email : dept.sciences.education@univ-yaounde.cm
+- Localisation : Yaoundé, Cameroun
+- Heures : Lun–Ven 7h30–15h30 · Sam 8h00–12h00
+
+🔬 AXES DE RECHERCHE :
+- Psychologie cognitive et apprentissage en contexte africain
+- Équité et inclusion scolaire au Cameroun
+- Technologies éducatives adaptées à l'Afrique subsaharienne
+- Évaluation des systèmes éducatifs
+
+RÈGLES IMPORTANTES :
+- Réponds de façon concise, claire et structurée (maximum 5–6 phrases)
+- Utilise des emojis pertinents avec modération
+- Si tu n'as pas l'information, oriente vers le contact officiel
+- Ne réponds qu'aux questions liées au département, à l'éducation ou aux études
+- Pour les questions hors-sujet, redirige poliment vers les sujets du département`;
+
+// ── ÉTAT ──
+let historique = [];
+let enAttente = false;
+let ouvert = false;
+
+// ── INIT : message de bienvenue ──
+window.addEventListener('load', () => {
+  setTimeout(() => ajouterBulle('bot',
+    '👋 Bonjour ! Je suis l\'assistant virtuel du Département des Sciences de l\'Éducation.\n\nJe peux répondre à vos questions sur les formations, les admissions, les enseignants et les débouchés. Comment puis-je vous aider ?'
+  ), 800);
+});
+
+// ── TOGGLE FENÊTRE ──
+window.toggleChat = function() {
+  ouvert = !ouvert;
+  const fenetre = document.getElementById('chat-fenetre');
+  const btn = document.getElementById('chat-btn');
+  const badge = document.getElementById('chat-badge');
+  fenetre.classList.toggle('visible', ouvert);
+  btn.classList.toggle('ouvert', ouvert);
+  if (ouvert) {
+    badge.style.display = 'none';
+    document.getElementById('chat-input').focus();
+    faireDefiler();
+  }
+};
+
+// ── AJOUTER UNE BULLE ──
+function ajouterBulle(role, texte) {
+  const zone = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'bulle ' + role;
+  // Convertir sauts de ligne en <br>
+  div.innerHTML = texte.replace(/\n/g, '<br>');
+  zone.appendChild(div);
+  faireDefiler();
+  return div;
+}
+
+// ── INDICATEUR DE FRAPPE ──
+function montrerFrappe() {
+  const zone = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.className = 'frappe';
+  div.id = 'frappe-anim';
+  div.innerHTML = '<span></span><span></span><span></span>';
+  zone.appendChild(div);
+  faireDefiler();
+}
+function cacherFrappe() {
+  const el = document.getElementById('frappe-anim');
+  if (el) el.remove();
+}
+
+// ── DÉFILER EN BAS ──
+function faireDefiler() {
+  const zone = document.getElementById('chat-messages');
+  setTimeout(() => { zone.scrollTop = zone.scrollHeight; }, 60);
+}
+
+// ── AJUSTER HAUTEUR TEXTAREA ──
+window.ajusterHauteur = function(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+};
+
+// ── ENVOI RAPIDE ──
+window.envoyerRapide = function(texte) {
+  const input = document.getElementById('chat-input');
+  input.value = texte;
+  envoyerMessage();
+  // Ouvrir la fenêtre si fermée
+  if (!ouvert) toggleChat();
+};
+
+// ── ENVOI MESSAGE ──
+window.envoyerMessage = async function() {
+  const input = document.getElementById('chat-input');
+  const texte = input.value.trim();
+  if (!texte || enAttente) return;
+
+  // Afficher message utilisateur
+  input.value = '';
+  input.style.height = 'auto';
+  ajouterBulle('user', texte);
+
+  // Cacher questions rapides après 1ère interaction
+  document.getElementById('chat-rapides').style.display = 'none';
+
+  // Ajouter à l'historique
+  historique.push({ role: 'user', content: texte });
+
+  // Bloquer l'interface
+  enAttente = true;
+  document.getElementById('chat-envoyer').disabled = true;
+  montrerFrappe();
+
+  try {
+    const reponse = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: SYSTEME,
+        messages: historique
+      })
+    });
+
+    const data = await reponse.json();
+
+    // Extraire le texte de la réponse
+    const texteReponse = data.content
+      ?.filter(b => b.type === 'text')
+      .map(b => b.text)
+      .join('') || 'Désolé, je n\'ai pas pu obtenir une réponse. Veuillez réessayer ou contacter le département directement.';
+
+    cacherFrappe();
+    ajouterBulle('bot', texteReponse);
+
+    // Ajouter réponse à l'historique (max 10 échanges pour économiser les tokens)
+    historique.push({ role: 'assistant', content: texteReponse });
+    if (historique.length > 20) historique = historique.slice(-20);
+
+  } catch (err) {
+    cacherFrappe();
+    ajouterBulle('bot', '⚠️ Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet ou contacter directement le département au +237 000 000 000.');
+    console.error('Erreur chatbot:', err);
+  } finally {
+    enAttente = false;
+    document.getElementById('chat-envoyer').disabled = false;
+    document.getElementById('chat-input').focus();
+  }
+};
+
+})();
+/* PRELOADER */
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    var pre = document.getElementById('preloader');
+    pre.classList.add('masquer');
+    setTimeout(function() { pre.style.display = 'none'; }, 650);
+  }, 2200);
+});
+    /* ── MODAL PROFESSEUR ── */
+    function ouvrirModal(nom, titre, photo, bio, tags) {
+      document.getElementById('modal-nom').textContent   = nom;
+      document.getElementById('modal-titre').textContent = titre;
+      document.getElementById('modal-bio').textContent   = bio;
+      document.getElementById('modal-img').src           = photo;
+      document.getElementById('modal-tags').innerHTML    = tags
+        .split(',')
+        .map(t => `<span class="tag">${t.trim()}</span>`)
+        .join('');
+      document.getElementById('modal-prof').classList.add('ouvert');
+      document.body.style.overflow = 'hidden';
+    }
+    function fermerModal() {
+      document.getElementById('modal-prof').classList.remove('ouvert');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') fermerModal();
+    });
+</script>
+</body>
+</html>
