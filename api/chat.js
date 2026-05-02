@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   const { messages, system } = req.body;
 
   const completion = await groq.chat.completions.create({
-    model: "llama3-8b-8192",
+    model: "llama-3.3-70b-versatile",
     max_tokens: 500,
     messages: [
       { role: "system", content: system },
