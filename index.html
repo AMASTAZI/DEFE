@@ -971,9 +971,9 @@
     <div class="pied-col">
       <h5>Contact</h5>
       <ul>
-        <li><a href="tel:+237000000000">📞 +237 000 000 000</a></li>
-        <li><a href="https://wa.me/237000000000" target="_blank">💬 WhatsApp</a></li>
-        <li><a href="mailto:dept.sciences.education@univ-yaounde.cm">✉️ E-mail</a></li>
+        <li><a href="tel:+237000000000"><i class="fas fa-phone"></i> +237 000 000 000</a></li>
+        <li><a href="https://wa.me/237000000000" target="_blank"><i class="fas fa-comments"></i> WhatsApp</a></li>
+        <li><a href="mailto:dept.sciences.education@univ-yaounde.cm"><i class="fas fa-envelope"></i> E-mail</a></li>
         <li><a onclick="afficherPage('contact')">Formulaire de contact</a></li>
       </ul>
     </div>
@@ -1283,226 +1283,223 @@ animer();
      CHATBOT FSE — JAVASCRIPT
 ══════════════════════════════════════════════════════ -->
 <script>
-(function() {
+  (function() {
 
-// ── CONTEXTE SYSTÈME DU CHATBOT ──
-const SYSTEME = `Tu es l'assistant virtuel officiel du Département des Sciences de l'Éducation de la Faculté des Sciences de l'Éducation au Cameroun. Tu réponds UNIQUEMENT en français, avec un ton professionnel, bienveillant et académique.
+    // ── CONTEXTE SYSTÈME DU CHATBOT ──
+    const SYSTEME = `Tu es l'assistant virtuel officiel du Département des Sciences de l'Éducation de la Faculté des Sciences de l'Éducation au Cameroun. Tu réponds UNIQUEMENT en français, avec un ton professionnel, bienveillant et académique.
 
-INFORMATIONS SUR LE DÉPARTEMENT :
+    INFORMATIONS SUR LE DÉPARTEMENT :
 
-📍 INSTITUTION : Faculté des Sciences de l'Éducation — Département des Sciences de l'Éducation, Yaoundé, Cameroun.
+    📍 INSTITUTION : Faculté des Sciences de l'Éducation — Département des Sciences de l'Éducation, Yaoundé, Cameroun.
 
-🎓 FORMATIONS (Système LMD) :
-1. Psychologie de l'Éducation : processus d'apprentissage, développement cognitif, psychopédagogie, troubles des apprentissages, motivation scolaire.
-2. Sociologie et Anthropologie de l'Éducation : inégalités éducatives, politiques scolaires, dynamiques socioculturelles, inclusion, genre et éducation.
-3. TIC en Éducation : e-learning, ingénierie pédagogique, intelligence artificielle en éducation, LMS, ressources numériques.
+    🎓 FORMATIONS (Système LMD) :
+    1. Psychologie de l'Éducation : processus d'apprentissage, développement cognitif, psychopédagogie, troubles des apprentissages, motivation scolaire.
+    2. Sociologie et Anthropologie de l'Éducation : inégalités éducatives, politiques scolaires, dynamiques socioculturelles, inclusion, genre et éducation.
+    3. TIC en Éducation : e-learning, ingénierie pédagogique, intelligence artificielle en éducation, LMS, ressources numériques.
 
-📚 NIVEAUX : Licence (3 ans) · Master (2 ans) · Doctorat (3–5 ans)
+    📚 NIVEAUX : Licence (3 ans) · Master (2 ans) · Doctorat (3–5 ans)
 
-📋 CONDITIONS D'ADMISSION :
-- Licence : Baccalauréat toutes séries (A, B, C, D, E) ou équivalent
-- Master : Licence en sciences humaines, lettres, psychologie, philosophie ou domaine connexe
-- Doctorat : Master recherche avec mémoire de qualité
-- Langue : Français maîtrisé, anglais est un atout
-- Dossier : relevés de notes, diplômes, lettre de motivation, pièce d'identité
+    📋 CONDITIONS D'ADMISSION :
+    - Licence : Baccalauréat toutes séries (A, B, C, D, E) ou équivalent
+    - Master : Licence en sciences humaines, lettres, psychologie, philosophie ou domaine connexe
+    - Doctorat : Master recherche avec mémoire de qualité
+    - Langue : Français maîtrisé, anglais est un atout
+    - Dossier : relevés de notes, diplômes, lettre de motivation, pièce d'identité
 
-👩‍🏫 RESPONSABLES ACADÉMIQUES :
-- Pr Victor Claude EYENGA : Chef de Département, neurochirurgien et Maître de Conférences à la Faculté de Médecine de Yaoundé I
-- Pr Valèse MAPTO KENGNE : Responsable académique à l'Université de Yaoundé I, spécialisée en sciences de l'éducation
-- Dr Martial Aimé WAKEU : Docteur en psychologie sociale, enseignant à la FSE
-- Dr Roger TCHAWOUO TCHOUNKEU : Médecin radiologue à Douala, formateur académique
-- Dr TCHOUAFFI KOUM AWA : PhD en anthropologie médicale, chercheuse au CPSHP
+    👩‍🏫 RESPONSABLES ACADÉMIQUES :
+    - Pr Victor Claude EYENGA : Chef de Département, neurochirurgien et Maître de Conférences à la Faculté de Médecine de Yaoundé I
+    - Pr Valèse MAPTO KENGNE : Responsable académique à l'Université de Yaoundé I, spécialisée en sciences de l'éducation
+    - Dr Martial Aimé WAKEU : Docteur en psychologie sociale, enseignant à la FSE
+    - Dr Roger TCHAWOUO TCHOUNKEU : Médecin radiologue à Douala, formateur académique
+    - Dr TCHOUAFFI KOUM AWA : PhD en anthropologie médicale, chercheuse au CPSHP
 
-💼 DÉBOUCHÉS PROFESSIONNELS :
-- Enseignement : primaire, secondaire, supérieur, conseiller pédagogique, inspecteur
-- Recherche : universités, centres de recherche, publications scientifiques
-- Conseil & Expertise : consultant pédagogique, expert en évaluation, formateur
-- Développement : ONG, agences onusiennes (UNICEF, UNESCO), projets bilatéraux
-- Entrepreneuriat éducatif : écoles privées, centres de formation, e-learning, EdTech
+    💼 DÉBOUCHÉS PROFESSIONNELS :
+    - Enseignement : primaire, secondaire, supérieur, conseiller pédagogique, inspecteur
+    - Recherche : universités, centres de recherche, publications scientifiques
+    - Conseil & Expertise : consultant pédagogique, expert en évaluation, formateur
+    - Développement : ONG, agences onusiennes (UNICEF, UNESCO), projets bilatéraux
+    - Entrepreneuriat éducatif : écoles privées, centres de formation, e-learning, EdTech
 
-📞 CONTACT :
-- Téléphone / WhatsApp : +237 000 000 000
-- Email : dept.sciences.education@univ-yaounde.cm
-- Localisation : Yaoundé, Cameroun
-- Heures : Lun–Ven 7h30–15h30 · Sam 8h00–12h00
+    📞 CONTACT :
+    - Téléphone / WhatsApp : +237 000 000 000
+    - Email : dept.sciences.education@univ-yaounde.cm
+    - Localisation : Yaoundé, Cameroun
+    - Heures : Lun–Ven 7h30–15h30 · Sam 8h00–12h00
 
-🔬 AXES DE RECHERCHE :
-- Psychologie cognitive et apprentissage en contexte africain
-- Équité et inclusion scolaire au Cameroun
-- Technologies éducatives adaptées à l'Afrique subsaharienne
-- Évaluation des systèmes éducatifs
+    🔬 AXES DE RECHERCHE :
+    - Psychologie cognitive et apprentissage en contexte africain
+    - Équité et inclusion scolaire au Cameroun
+    - Technologies éducatives adaptées à l'Afrique subsaharienne
+    - Évaluation des systèmes éducatifs
 
-RÈGLES IMPORTANTES :
-- Réponds de façon concise, claire et structurée (maximum 5–6 phrases)
-- Utilise des emojis pertinents avec modération
-- Si tu n'as pas l'information, oriente vers le contact officiel
-- Ne réponds qu'aux questions liées au département, à l'éducation ou aux études
-- Pour les questions hors-sujet, redirige poliment vers les sujets du département`;
+    RÈGLES IMPORTANTES :
+    - Réponds de façon concise, claire et structurée (maximum 5–6 phrases)
+    - Utilise des emojis pertinents avec modération
+    - Si tu n'as pas l'information, oriente vers le contact officiel
+    - Ne réponds qu'aux questions liées au département, à l'éducation ou aux études
+    - Pour les questions hors-sujet, redirige poliment vers les sujets du département`;
 
-// ── ÉTAT ──
-let historique = [];
-let enAttente = false;
-let ouvert = false;
+    // ── ÉTAT ──
+    let historique = [];
+    let enAttente = false;
+    let ouvert = false;
 
-// ── INIT : message de bienvenue ──
-window.addEventListener('load', () => {
-  setTimeout(() => ajouterBulle('bot',
-    '👋 Bonjour ! Je suis l\'assistant virtuel du Département des Sciences de l\'Éducation.\n\nJe peux répondre à vos questions sur les formations, les admissions, les enseignants et les débouchés. Comment puis-je vous aider ?'
-  ), 800);
-});
-
-// ── TOGGLE FENÊTRE ──
-window.toggleChat = function() {
-  ouvert = !ouvert;
-  const fenetre = document.getElementById('chat-fenetre');
-  const btn = document.getElementById('chat-btn');
-  const badge = document.getElementById('chat-badge');
-  fenetre.classList.toggle('visible', ouvert);
-  btn.classList.toggle('ouvert', ouvert);
-  if (ouvert) {
-    badge.style.display = 'none';
-    document.getElementById('chat-input').focus();
-    faireDefiler();
-  }
-};
-
-// ── AJOUTER UNE BULLE ──
-function ajouterBulle(role, texte) {
-  const zone = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.className = 'bulle ' + role;
-  // Convertir sauts de ligne en <br>
-  div.innerHTML = texte.replace(/\n/g, '<br>');
-  zone.appendChild(div);
-  faireDefiler();
-  return div;
-}
-
-// ── INDICATEUR DE FRAPPE ──
-function montrerFrappe() {
-  const zone = document.getElementById('chat-messages');
-  const div = document.createElement('div');
-  div.className = 'frappe';
-  div.id = 'frappe-anim';
-  div.innerHTML = '<span></span><span></span><span></span>';
-  zone.appendChild(div);
-  faireDefiler();
-}
-function cacherFrappe() {
-  const el = document.getElementById('frappe-anim');
-  if (el) el.remove();
-}
-
-// ── DÉFILER EN BAS ──
-function faireDefiler() {
-  const zone = document.getElementById('chat-messages');
-  setTimeout(() => { zone.scrollTop = zone.scrollHeight; }, 60);
-}
-
-// ── AJUSTER HAUTEUR TEXTAREA ──
-window.ajusterHauteur = function(el) {
-  el.style.height = 'auto';
-  el.style.height = Math.min(el.scrollHeight, 100) + 'px';
-};
-
-// ── ENVOI RAPIDE ──
-window.envoyerRapide = function(texte) {
-  const input = document.getElementById('chat-input');
-  input.value = texte;
-  envoyerMessage();
-  // Ouvrir la fenêtre si fermée
-  if (!ouvert) toggleChat();
-};
-
-// ── ENVOI MESSAGE ──
-window.envoyerMessage = async function() {
-  const input = document.getElementById('chat-input');
-  const texte = input.value.trim();
-  if (!texte || enAttente) return;
-
-  // Afficher message utilisateur
-  input.value = '';
-  input.style.height = 'auto';
-  ajouterBulle('user', texte);
-
-  // Cacher questions rapides après 1ère interaction
-  document.getElementById('chat-rapides').style.display = 'none';
-
-  // Ajouter à l'historique
-  historique.push({ role: 'user', content: texte });
-
-  // Bloquer l'interface
-  enAttente = true;
-  document.getElementById('chat-envoyer').disabled = true;
-  montrerFrappe();
-
-  try {
-    const reponse = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEME,
-        messages: historique
-      })
+    // ── INIT : message de bienvenue ──
+    window.addEventListener('load', () => {
+      setTimeout(() => ajouterBulle('bot',
+        '👋 Bonjour ! Je suis l\'assistant virtuel du Département des Sciences de l\'Éducation.\n\nJe peux répondre à vos questions sur les formations, les admissions, les enseignants et les débouchés. Comment puis-je vous aider ?'
+      ), 800);
     });
 
-    const data = await reponse.json();
+    // ── TOGGLE FENÊTRE ──
+    window.toggleChat = function() {
+      ouvert = !ouvert;
+      const fenetre = document.getElementById('chat-fenetre');
+      const btn = document.getElementById('chat-btn');
+      const badge = document.getElementById('chat-badge');
+      fenetre.classList.toggle('visible', ouvert);
+      btn.classList.toggle('ouvert', ouvert);
+      if (ouvert) {
+        badge.style.display = 'none';
+        document.getElementById('chat-input').focus();
+        faireDefiler();
+      }
+    };
 
-    // Extraire le texte de la réponse
-    const texteReponse = data.content
-      ?.filter(b => b.type === 'text')
-      .map(b => b.text)
-      .join('') || 'Désolé, je n\'ai pas pu obtenir une réponse. Veuillez réessayer ou contacter le département directement.';
-
-    cacherFrappe();
-    ajouterBulle('bot', texteReponse);
-
-    // Ajouter réponse à l'historique (max 10 échanges pour économiser les tokens)
-    historique.push({ role: 'assistant', content: texteReponse });
-    if (historique.length > 20) historique = historique.slice(-20);
-
-  } catch (err) {
-    cacherFrappe();
-    ajouterBulle('bot', '⚠️ Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet ou contacter directement le département au +237 000 000 000.');
-    console.error('Erreur chatbot:', err);
-  } finally {
-    enAttente = false;
-    document.getElementById('chat-envoyer').disabled = false;
-    document.getElementById('chat-input').focus();
-  }
-};
-
-})();
-/* PRELOADER */
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    var pre = document.getElementById('preloader');
-    pre.classList.add('masquer');
-    setTimeout(function() { pre.style.display = 'none'; }, 650);
-  }, 2200);
-});
-    /* ── MODAL PROFESSEUR ── */
-    function ouvrirModal(nom, titre, photo, bio, tags) {
-      document.getElementById('modal-nom').textContent   = nom;
-      document.getElementById('modal-titre').textContent = titre;
-      document.getElementById('modal-bio').textContent   = bio;
-      document.getElementById('modal-img').src           = photo;
-      document.getElementById('modal-tags').innerHTML    = tags
-        .split(',')
-        .map(t => `<span class="tag">${t.trim()}</span>`)
-        .join('');
-      document.getElementById('modal-prof').classList.add('ouvert');
-      document.body.style.overflow = 'hidden';
+    // ── AJOUTER UNE BULLE ──
+    function ajouterBulle(role, texte) {
+      const zone = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = 'bulle ' + role;
+      // Convertir sauts de ligne en <br>
+      div.innerHTML = texte.replace(/\n/g, '<br>');
+      zone.appendChild(div);
+      faireDefiler();
+      return div;
     }
-    function fermerModal() {
-      document.getElementById('modal-prof').classList.remove('ouvert');
-      document.body.style.overflow = '';
+
+    // ── INDICATEUR DE FRAPPE ──
+    function montrerFrappe() {
+      const zone = document.getElementById('chat-messages');
+      const div = document.createElement('div');
+      div.className = 'frappe';
+      div.id = 'frappe-anim';
+      div.innerHTML = '<span></span><span></span><span></span>';
+      zone.appendChild(div);
+      faireDefiler();
     }
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') fermerModal();
+    function cacherFrappe() {
+      const el = document.getElementById('frappe-anim');
+      if (el) el.remove();
+    }
+
+    // ── DÉFILER EN BAS ──
+    function faireDefiler() {
+      const zone = document.getElementById('chat-messages');
+      setTimeout(() => { zone.scrollTop = zone.scrollHeight; }, 60);
+    }
+
+    // ── AJUSTER HAUTEUR TEXTAREA ──
+    window.ajusterHauteur = function(el) {
+      el.style.height = 'auto';
+      el.style.height = Math.min(el.scrollHeight, 100) + 'px';
+    };
+
+    // ── ENVOI RAPIDE ──
+    window.envoyerRapide = function(texte) {
+      const input = document.getElementById('chat-input');
+      input.value = texte;
+      envoyerMessage();
+      // Ouvrir la fenêtre si fermée
+      if (!ouvert) toggleChat();
+    };
+
+    // ── ENVOI MESSAGE ──
+    window.envoyerMessage = async function() {
+      const input = document.getElementById('chat-input');
+      const texte = input.value.trim();
+      if (!texte || enAttente) return;
+
+      // Afficher message utilisateur
+      input.value = '';
+      input.style.height = 'auto';
+      ajouterBulle('user', texte);
+
+      // Cacher questions rapides après 1ère interaction
+      document.getElementById('chat-rapides').style.display = 'none';
+
+      // Ajouter à l'historique
+      historique.push({ role: 'user', content: texte });
+
+      // Bloquer l'interface
+      enAttente = true;
+      document.getElementById('chat-envoyer').disabled = true;
+      montrerFrappe();
+
+      
+      try {
+        const reponse = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            system: SYSTEME,
+            messages: historique
+          })
+        });
+
+        const data = await reponse.json();
+
+        // Extraire le texte de la réponse Groq
+        const texteReponse = data.choices?.[0]?.message?.content
+          || 'Désolé, je n\'ai pas pu obtenir une réponse. Veuillez réessayer ou contacter le département directement.';
+
+        cacherFrappe();
+        ajouterBulle('bot', texteReponse);
+
+        // Ajouter réponse à l'historique (max 10 échanges pour économiser les tokens)
+        historique.push({ role: 'assistant', content: texteReponse });
+        if (historique.length > 20) historique = historique.slice(-20);
+
+      } catch (err) {
+        cacherFrappe();
+        ajouterBulle('bot', '⚠️ Une erreur de connexion est survenue. Veuillez vérifier votre connexion internet ou contacter directement le département au +237 000 000 000.');
+        console.error('Erreur chatbot:', err);
+      } finally {
+        enAttente = false;
+        document.getElementById('chat-envoyer').disabled = false;
+        document.getElementById('chat-input').focus();
+      }
+    };
+
+    })();
+    /* PRELOADER */
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var pre = document.getElementById('preloader');
+        pre.classList.add('masquer');
+        setTimeout(function() { pre.style.display = 'none'; }, 650);
+      }, 2200);
     });
+        /* ── MODAL PROFESSEUR ── */
+        function ouvrirModal(nom, titre, photo, bio, tags) {
+          document.getElementById('modal-nom').textContent   = nom;
+          document.getElementById('modal-titre').textContent = titre;
+          document.getElementById('modal-bio').textContent   = bio;
+          document.getElementById('modal-img').src           = photo;
+          document.getElementById('modal-tags').innerHTML    = tags
+            .split(',')
+            .map(t => `<span class="tag">${t.trim()}</span>`)
+            .join('');
+          document.getElementById('modal-prof').classList.add('ouvert');
+          document.body.style.overflow = 'hidden';
+        }
+        function fermerModal() {
+          document.getElementById('modal-prof').classList.remove('ouvert');
+          document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => {
+          if (e.key === 'Escape') fermerModal();
+  });
 </script>
 </body>
 </html>
