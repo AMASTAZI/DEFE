@@ -942,3 +942,22 @@ a i {
 .prof-bio { -webkit-line-clamp: 2; }
 .prof-tags { margin-top: 10px; gap: 4px; }
 .tag { font-size: 9px; padding: 2px 6px; }
+
+/* Variante carte prof plus petite (ex: Rectorat) */
+.prof-carte--petite{
+  max-width: 220px;
+  margin-inline: auto;
+}
+.prof-carte--petite .prof-photo,
+.prof-carte--petite .prof-photo-placeholder{
+  aspect-ratio: 1 / 1;
+}
+.prof-carte--petite .prof-info{
+  padding: 10px 10px 12px;
+}
+.prof-carte--petite .prof-nom{
+  font-size: 12px;
+}
+.prof-carte--petite .prof-titre{
+  font-size: 9.5px;
+}
