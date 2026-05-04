@@ -76,7 +76,7 @@
     </a>
 
     <a onclick="afficherPage('professeurs')" id="nav-professeurs">
-        <i class="fas fa-chalkboard-teacher"></i> Professeurs
+        <i class="fas fa-chalkboard-teacher"></i> Équipe enseignants
     </a>
 
     <a onclick="afficherPage('formations')" id="nav-formations">
@@ -104,7 +104,7 @@
 <div class="mobile-menu" id="menuMobile">
   <a onclick="afficherPage('accueil');toggleMenu()"><i class="fas fa-home"></i> Accueil</a>
   <a onclick="afficherPage('etudiants');toggleMenu()"><i class="fas fa-user-graduate"></i> Étudiants</a>
-  <a onclick="afficherPage('professeurs');toggleMenu()"><i class="fas fa-chalkboard-teacher"></i> Professeurs</a>
+  <a onclick="afficherPage('professeurs');toggleMenu()"><i class="fas fa-chalkboard-teacher"></i> Équipe enseignants</a>
   <a onclick="afficherPage('formations');toggleMenu()"><i class="fas fa-book"></i> Formations</a>
   <a onclick="afficherPage('apropos');toggleMenu()"><i class="fas fa-university"></i> À propos</a>
   <a onclick="afficherPage('contact');toggleMenu()"><i class="fas fa-envelope"></i> Contact</a>
@@ -502,7 +502,7 @@
             <button class="btn-plus" onclick="ouvrirModal('Pr Pierre-Suzanne Eyenga Onana','Chef de Département','image/eyenga.png','Socio-anthropologue des littératures écrites et des civilisations d\'Afrique et de la Caraïbe noire. Secrétaire exécutif de l\'Équipe de Recherche en Littératures, Arts et Civilisations (ERLAC). Spécialiste des dynamiques du vivre-ensemble harmonieux dans les francographies africaines. Auteur de plus d\'une centaine d\'articles scientifiques et d\'une douzaine d\'ouvrages.','Chef de Département,Maître de Conférences')">Voir plus →</button>
             <div class="prof-tags">
               <!--<span class="tag">Chef de Département</span>-->
-              <span class="tag">Maître de Conférences</span>
+              <span class="tag">Professeur Titulaire</span>
             </div>
           </div>
         </div>
@@ -518,8 +518,7 @@
             <button class="btn-plus" onclick="ouvrirModal('Pr Valèse MAPTO KENGNE','Responsable Académique','image/kengne.png','Professeure à l\'Université de Yaoundé I, spécialisée en sciences de l\'éducation. Coordonne les programmes académiques et veille à l\'excellence des formations dispensées au sein du département.','Sciences de l\'Éducation,Université de Yaoundé I')">Voir plus →</button>
             <div class="prof-tags">
               <span class="tag">Maître de Conférences</span>
-              <span class="tag">Psychologie de l'Éducation</span>
-              <span class="tag">Université de Yaoundé I</span>
+              
             </div>
           </div>
         </div>
@@ -542,8 +541,7 @@
             <div class="prof-titre">Enseignant-chercheur en TIC & intelligence artificielle en éducation</div>
             <div class="prof-tags">
               <span class="tag">Dr Assistant</span>
-              <span class="tag">TIC & IA</span>
-              <span class="tag">Recherche</span>
+              
             </div>
           </div>
         </div>
@@ -559,8 +557,7 @@
             <button class="btn-plus" onclick="ouvrirModal('Dr Martial Aimé WAKEU','Enseignant-Chercheur','image/wakeu.png','Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l\'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.','Psychologie Sociale,Recherche')">Voir plus →</button>
             <div class="prof-tags">
               <span class="tag">Chargé de cours</span>
-              <span class="tag">Psychologie Sociale</span>
-              <span class="tag">Recherche</span>
+              
             </div>
           </div>
         </div>
@@ -576,9 +573,7 @@
             <button class="btn-plus" onclick="ouvrirModal('Dr Roger TCHAWOUO TCHOUNKEU','Médecin radiologue · Formateur académique','image/photo-tchawouo.jpg','Médecin radiologue exerçant à Douala, il apporte une dimension interdisciplinaire précieuse à la formation académique, enrichissant le lien entre sciences médicales et éducation.','Radiologie,Formation,Douala')">Voir plus →</button>
             <div class="prof-tags">
               <span class="tag">Chargé de cours</span>
-              <span class="tag">Radiologie</span>
-              <span class="tag">Formation</span>
-              <span class="tag">Douala</span>
+              
             </div>
           </div>
         </div>
@@ -594,9 +589,7 @@
             <button class="btn-plus" onclick="ouvrirModal('Dr TCHOUAFFI KOUM AWA','PhD · Anthropologie Médicale','image/awa.jpeg','PhD en anthropologie médicale. Chercheuse au Centre d\'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.','Anthropologie Médicale,CPSHP,Recherche')">Voir plus →</button>
             <div class="prof-tags">
               <span class="tag">Dr Assistant</span>
-              <span class="tag">Anthropologie Médicale</span>
-              <span class="tag">CPSHP</span>
-              <span class="tag">Recherche</span>
+              
             </div>
           </div>
         </div>
@@ -1027,7 +1020,7 @@
       <ul>
         <li><a onclick="afficherPage('accueil')">Accueil</a></li>
         <li><a onclick="afficherPage('etudiants')">Étudiants</a></li>
-        <li><a onclick="afficherPage('professeurs')">Professeurs</a></li>
+        <li><a onclick="afficherPage('professeurs')">Équipe enseignants</a></li>
         <li><a onclick="afficherPage('formations')">Formations</a></li>
         <li><a onclick="afficherPage('apropos')">À propos</a></li>
         <li><a onclick="afficherPage('contact')">Contact</a></li>
@@ -1337,7 +1330,7 @@ animer();
     <button class="q-rapide" onclick="envoyerRapide('Quelles sont les formations disponibles ?')">📚 Formations</button>
     <button class="q-rapide" onclick="envoyerRapide('Comment s\'inscrire ?')">📝 Inscription</button>
     <button class="q-rapide" onclick="envoyerRapide('Quels sont les débouchés ?')">💼 Débouchés</button>
-    <button class="q-rapide" onclick="envoyerRapide('Qui sont les enseignants ?')">👨‍🏫 Professeurs</button>
+    <button class="q-rapide" onclick="envoyerRapide('Qui sont les enseignants ?')">👨‍🏫 Équipe enseignants</button>
     <button class="q-rapide" onclick="envoyerRapide('Comment vous contacter ?')">📞 Contact</button>
   </div>
 

@@ -943,6 +943,12 @@ a i {
 .prof-tags { margin-top: 10px; gap: 4px; }
 .tag { font-size: 9px; padding: 2px 6px; }
 
+/* Masquer partout les bios + bouton "Voir plus" */
+.prof-bio,
+.btn-plus{
+  display:none !important;
+}
+
 /* Variante carte prof plus petite (ex: Rectorat) */
 .prof-carte--petite{
   max-width: 220px;
