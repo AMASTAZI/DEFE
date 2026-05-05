@@ -82,6 +82,9 @@
     <a onclick="afficherPage('formations')" id="nav-formations">
         <i class="fas fa-book"></i> Formations
     </a>
+    <a onclick="afficherPage('debouches')" id="nav-debouches">
+      <i class="fas fa-briefcase"></i> Débouchés
+    </a>
 
     <a onclick="afficherPage('apropos')" id="nav-apropos">
         <i class="fas fa-university"></i> À propos
@@ -104,8 +107,9 @@
 <div class="mobile-menu" id="menuMobile">
   <a onclick="afficherPage('accueil');toggleMenu()"><i class="fas fa-home"></i> Accueil</a>
   <a onclick="afficherPage('etudiants');toggleMenu()"><i class="fas fa-user-graduate"></i> Étudiants</a>
-  <a onclick="afficherPage('professeurs');toggleMenu()"><i class="fas fa-chalkboard-teacher"></i> Équipe enseignants</a>
+  <a onclick="afficherPage('professeurs');toggleMenu()"><i class="fas fa-chalkboard-teacher"></i>Équipe enseignants</a>
   <a onclick="afficherPage('formations');toggleMenu()"><i class="fas fa-book"></i> Formations</a>
+  <a onclick="afficherPage('debouches');toggleMenu()"><i class="fas fa-briefcase"></i> Débouchés</a>
   <a onclick="afficherPage('apropos');toggleMenu()"><i class="fas fa-university"></i> À propos</a>
   <a onclick="afficherPage('contact');toggleMenu()"><i class="fas fa-envelope"></i> Contact</a>
 </div>
@@ -124,6 +128,11 @@
       <div class="heros-actions">
         <button class="btn-principal" onclick="afficherPage('contact')">S'inscrire maintenant →</button>
         <button class="btn-secondaire" onclick="afficherPage('formations')">Découvrir les formations</button>
+      </div>
+
+      <div class="recherche-page recherche-page--hero">
+        <i class="fas fa-search"></i>
+        <input id="recherche-accueil" type="search" placeholder="Rechercher sur la page Accueil...">
       </div>
     </div>
     <div class="heros-visuel">
@@ -180,7 +189,7 @@
     <div class="grille-cartes">
       <div class="carte" onclick="afficherPage('formations')">
         <div class="icone-carte"><i class="fas fa-brain"></i></div>
-        <h3>Psychologie de l'Éducation</h3>
+        <h3>PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</h3>
         <p>Comprendre les processus d'apprentissage, de développement cognitif et émotionnel pour améliorer les pratiques éducatives.</p>
         <div class="lien-carte">Explorer →</div>
       </div>
@@ -235,6 +244,11 @@
     <div class="entete-tag">Pour les Étudiants</div>
     <h1>Votre Parcours Académique Commence Ici</h1>
     <p>Du premier cycle à la recherche doctorale, nous offrons des formations rigoureuses pour faire de vous un spécialiste des sciences de l'éducation.</p>
+
+    <div class="recherche-page">
+      <i class="fas fa-search"></i>
+      <input id="recherche-etudiants" type="search" placeholder="Rechercher (Licence, Master, conditions...)">
+    </div>
   </div>
 
   <section>
@@ -433,6 +447,11 @@
     <div class="entete-tag">Corps Enseignant</div>
     <h1>Savoir, Recherche & Engagement Académique</h1>
     <p>Nos enseignants-chercheurs allient expertise scientifique, rigueur pédagogique et engagement pour l'essor des sciences de l'éducation au Cameroun.</p>
+
+    <div class="recherche-page">
+      <i class="fas fa-search"></i>
+      <input id="recherche-professeurs" type="search" placeholder="Rechercher un enseignant (nom, poste...)">
+    </div>
   </div>
 
   <!-- RESPONSABLES ACADÉMIQUES -->
@@ -446,7 +465,7 @@
       <!-- 🏛 RECTEUR -->
       <div class="hierarchie-titre">
         <span class="hierarchie-badge"><i class="fas fa-university"></i></span>
-        <h3>Rectorat</h3>
+        <h3>Recteur</h3>
       </div>
       <div class="grille-profs">
         <div class="prof-carte prof-carte--petite">
@@ -476,7 +495,7 @@
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-chalkboard-teacher"></i></div>
           <div class="prof-info">
             <div class="prof-nom">Pr BELA Cyrille Bienvenu</div>
-            <div class="prof-titre">Doyen — Département d'Enseignement Fondamentaux en Éducation (UY1)</div>
+            <div class="prof-titre">Doyen —  La Faculté des Sciences de l'Education</div>
             <div class="prof-tags">
               <span class="tag">Doyen</span>
               <span class="tag">Professeur Titulaire</span>
@@ -488,7 +507,7 @@
       <!-- PROFESSEURS -->
       <div class="hierarchie-titre">
         <span class="hierarchie-badge"><i class="fas fa-university"></i></span>
-        <h3>Professeurs</h3>
+        <h3>Enseignants</h3>
       </div>
       <div class="grille-profs">
         <div class="prof-carte">
@@ -497,12 +516,12 @@
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-chalkboard-teacher"></i></div>
           <div class="prof-info">
             <div class="prof-nom">Pr Pierre-Suzanne Eyenga Onana</div>
-            <div class="prof-titre">Chef de Département</div>
+            <div class="prof-titre">Socio-anthropologue des Littératures écrites et Civilisations d’Afrique et de la Caraibe noire.</div>
             <div class="prof-bio">Socio-anthropologue des littératures écrites et des civilisations d'Afrique et de la Caraïbe noire. Secrétaire exécutif de l'Équipe de Recherche en Littératures, Arts et Civilisations (ERLAC). Spécialiste des dynamiques du vivre-ensemble harmonieux dans les francographies africaines. Auteur de plus d'une centaine d'articles scientifiques et d'une douzaine d'ouvrages.</div>
             <button class="btn-plus" onclick="ouvrirModal('Pr Pierre-Suzanne Eyenga Onana','Chef de Département','image/eyenga.png','Socio-anthropologue des littératures écrites et des civilisations d\'Afrique et de la Caraïbe noire. Secrétaire exécutif de l\'Équipe de Recherche en Littératures, Arts et Civilisations (ERLAC). Spécialiste des dynamiques du vivre-ensemble harmonieux dans les francographies africaines. Auteur de plus d\'une centaine d\'articles scientifiques et d\'une douzaine d\'ouvrages.','Chef de Département,Maître de Conférences')">Voir plus →</button>
             <div class="prof-tags">
               <!--<span class="tag">Chef de Département</span>-->
-              <span class="tag">Professeur Titulaire</span>
+              <span class="tag">Chef de département et Professeur Titulaire</span>
             </div>
           </div>
         </div>
@@ -513,7 +532,7 @@
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-chalkboard-teacher"></i></div>
           <div class="prof-info">
             <div class="prof-nom">Pr Valèse MAPTO KENGNE</div>
-            <div class="prof-titre">Psychologue de l'Éducation</div>
+            <div class="prof-titre">Sciences de l'éducation,Éducation comparée et fondements de l’éducation </div>
             <div class="prof-bio">Professeure à l'Université de Yaoundé I, spécialisée en sciences de l'éducation. Coordonne les programmes académiques et veille à l'excellence des formations dispensées au sein du département.</div>
             <button class="btn-plus" onclick="ouvrirModal('Pr Valèse MAPTO KENGNE','Responsable Académique','image/kengne.png','Professeure à l\'Université de Yaoundé I, spécialisée en sciences de l\'éducation. Coordonne les programmes académiques et veille à l\'excellence des formations dispensées au sein du département.','Sciences de l\'Éducation,Université de Yaoundé I')">Voir plus →</button>
             <div class="prof-tags">
@@ -533,12 +552,27 @@
       </div>
       <div class="grille-profs">
         <div class="prof-carte">
-          <img src="image/ayiss.jpeg" alt="Dr Ingénieur AYISSI KOUNA (Assistant)" class="prof-photo"
+          <img src="image/ayissi.png" alt="Dr Ingénieur AYISSI KOUNA (Assistant)" class="prof-photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-microscope"></i></div>
           <div class="prof-info">
             <div class="prof-nom">Dr Ingénieur AYISSI KOUNA (Assistant)</div>
             <div class="prof-titre">Enseignant-chercheur en TIC & intelligence artificielle en éducation</div>
+            <div class="prof-tags">
+              <span class="tag">Dr Assistant</span>
+              
+            </div>
+          </div>
+        </div>
+        <div class="prof-carte">
+          <img src="image/awa.jpeg" alt="Dr TCHOUAFFI KOUM AWA" class="prof-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-microscope"></i></div>
+          <div class="prof-info">
+            <div class="prof-nom">Dr TCHOUAFFI KUM AWAH</div>
+            <div class="prof-titre">PhD · Anthropologie Médicale</div>
+            <div class="prof-bio">PhD en anthropologie médicale. Chercheuse au Centre d'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.</div>
+            <button class="btn-plus" onclick="ouvrirModal('Dr TCHOUAFFI KOUM AWA','PhD · Anthropologie Médicale','image/awa.jpeg','PhD en anthropologie médicale. Chercheuse au Centre d\'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.','Anthropologie Médicale,CPSHP,Recherche')">Voir plus →</button>
             <div class="prof-tags">
               <span class="tag">Dr Assistant</span>
               
@@ -552,7 +586,7 @@
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-microscope"></i></div>
           <div class="prof-info">
             <div class="prof-nom">Dr Martial Aimé WAKEU</div>
-            <div class="prof-titre">Enseignant-Chercheur</div>
+            <div class="prof-titre">Psychologue de l'éducation</div>
             <div class="prof-bio">Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.</div>
             <button class="btn-plus" onclick="ouvrirModal('Dr Martial Aimé WAKEU','Enseignant-Chercheur','image/wakeu.png','Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l\'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.','Psychologie Sociale,Recherche')">Voir plus →</button>
             <div class="prof-tags">
@@ -561,9 +595,24 @@
             </div>
           </div>
         </div>
+        <div class="prof-carte">
+          <img src="image/engozoo.jpeg" alt="Dr Engozo'o Rony Ivan" class="prof-photo"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-microscope"></i></div>
+          <div class="prof-info">
+            <div class="prof-nom">Dr Engozo'o Rony Ivan</div>
+            <div class="prof-titre">Planification des Systèmes Éducatifs</div>
+            <div class="prof-bio">Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.</div>
+            <button class="btn-plus" onclick="ouvrirModal('Dr Engozo\'o Rony Ivan','Enseignant-Chercheur','image/engozoo.jpeg','Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l\'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.','Psychologie Sociale,Recherche')">Voir plus →</button>
+            <div class="prof-tags">
+              <span class="tag">Dr Assistant</span>
+              
+            </div>
+          </div>
+        </div>
 
         <div class="prof-carte">
-          <img src="image/photo-tchawouo.jpg" alt="Dr Roger TCHAWOUO TCHOUNKEU" class="prof-photo"
+          <img src="image/tchounke.png" alt="Dr Roger TCHAWOUO TCHOUNKEU" class="prof-photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-user-md"></i></div>
           <div class="prof-info">
@@ -577,22 +626,23 @@
             </div>
           </div>
         </div>
-
         <div class="prof-carte">
-          <img src="image/awa.jpeg" alt="Dr TCHOUAFFI KOUM AWA" class="prof-photo"
+          <img src="image/biolo.png" alt="Dr BIOLO Joseph Tierry Dimitri" class="prof-photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-microscope"></i></div>
           <div class="prof-info">
-            <div class="prof-nom">Dr TCHOUAFFI KOUM AWA</div>
-            <div class="prof-titre">PhD · Anthropologie Médicale</div>
-            <div class="prof-bio">PhD en anthropologie médicale. Chercheuse au Centre d'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.</div>
-            <button class="btn-plus" onclick="ouvrirModal('Dr TCHOUAFFI KOUM AWA','PhD · Anthropologie Médicale','image/awa.jpeg','PhD en anthropologie médicale. Chercheuse au Centre d\'Études sur la Population et de Promotion de la Santé (CPSHP). Ses travaux croisent éducation, santé communautaire et anthropologie.','Anthropologie Médicale,CPSHP,Recherche')">Voir plus →</button>
+            <div class="prof-nom">Dr BIOLO Joseph Tierry Dimitri</div>
+            <div class="prof-titre">Sociologue de la population et du développement</div>
+            <div class="prof-bio">Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.</div>
+            <button class="btn-plus" onclick="ouvrirModal('Dr BIOLO Joseph Tierry Dimitri','Enseignant-Chercheur','image/wakeu.png','Docteur en psychologie sociale. Enseigne à la Faculté des Sciences de l\'Éducation et conduit des recherches sur les dynamiques psychosociales en milieu scolaire camerounais.','Psychologie Sociale,Recherche')">Voir plus →</button>
             <div class="prof-tags">
-              <span class="tag">Dr Assistant</span>
+              <span class="tag">Chargé de cours</span>
               
             </div>
           </div>
         </div>
+
+      
       </div>
   </section>
 
@@ -679,13 +729,18 @@
     <div class="entete-tag">Formations Académiques</div>
     <h1>Trois Disciplines,<br>Une Vision d'Avenir</h1>
     <p>Chaque programme est conçu avec rigueur scientifique, pertinence professionnelle et engagement pour le développement éducatif du Cameroun.</p>
+
+    <div class="recherche-page">
+      <i class="fas fa-search"></i>
+      <input id="recherche-formations" type="search" placeholder="Rechercher une formation (mots-clés...)">
+    </div>
   </div>
 
   <!-- PSYCHOLOGIE DE L'ÉDUCATION -->
   <div class="formation-detail">
     <div class="formation-cote">
       <div class="formation-cote-icone"><i class="fas fa-brain"></i></div>
-      <h3>Psychologie de l'Éducation</h3>
+      <h3>PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</h3>
       <p>Une formation centrée sur les dimensions psychologiques de l'apprentissage et du développement humain appliqués à l'éducation.</p>
       <div class="niveaux-tags">
         <span class="niv-tag">Licence</span>
@@ -694,7 +749,7 @@
       </div>
     </div>
     <div class="formation-principal">
-      <h4>Psychologie de l'Éducation</h4>
+      <h4>PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</h4>
       <p>Cette formation explore les fondements psychologiques de l'apprentissage, de l'enseignement et du développement humain. Elle forme des spécialistes capables d'analyser les comportements d'apprentissage, d'identifier les difficultés scolaires et de proposer des interventions adaptées.</p>
       <p>Les diplômés maîtrisent des outils d'évaluation psychopédagogique et peuvent exercer dans les établissements scolaires, les centres de formation et les institutions de recherche.</p>
       <ul>
@@ -800,6 +855,221 @@
       <button class="btn-principal" onclick="afficherPage('contact')">Demander une Brochure →</button>
     </div>
   </div>
+</div>
+
+<!-- ══════════ PAGE DÉBOUCHÉS ══════════ -->
+<div id="page-debouches" class="page">
+
+  <div class="entete-page">
+    <div class="entete-tag">Perspectives Professionnelles</div>
+    <h1>Débouchés par Spécialisation</h1>
+    <p>Nos diplômés s'intègrent dans des secteurs variés au Cameroun et en Afrique Centrale, portés par une formation rigoureuse et une expertise reconnue.</p>
+
+    <div class="recherche-page">
+      <i class="fas fa-search"></i>
+      <input id="recherche-debouches" type="search" placeholder="Rechercher un débouché (métier, secteur...)">
+    </div>
+  </div>
+
+  <section>
+
+    <!-- ── PSYCHOLOGIE DE L'ÉDUCATION ── -->
+    <div class="deb-titre">
+      <i class="fas fa-brain"></i>
+      <h3>PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</h3>
+    </div>
+    <div class="deb-grille">
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-user-graduate"></i></div>
+        <div>
+          <h4>Psychologue Scolaire</h4>
+          <p>Accompagnement psychologique des élèves en difficulté dans les établissements primaires et secondaires.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-compass"></i></div>
+        <div>
+          <h4>Conseiller d'Orientation</h4>
+          <p>Guidance des élèves et étudiants dans leurs choix d'études et de carrière professionnelle.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div>
+          <h4>Enseignant en Sciences de l'Éducation</h4>
+          <p>Enseignement des disciplines psychopédagogiques dans le secondaire et le supérieur.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-microscope"></i></div>
+        <div>
+          <h4>Chercheur en PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</h4>
+          <p>Conduite de recherches sur l'apprentissage, la motivation et le développement cognitif en milieu scolaire.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-briefcase"></i></div>
+        <div>
+          <h4>Consultant en Éducation</h4>
+          <p>Conseil auprès d'établissements, ministères et organisations pour améliorer la qualité des systèmes éducatifs.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico bleu"><i class="fas fa-hands-helping"></i></div>
+        <div>
+          <h4>Spécialiste en Soutien Pédagogique</h4>
+          <p>Conception et mise en œuvre de dispositifs d'aide aux élèves en difficulté d'apprentissage.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deb-sep"></div>
+
+    <!-- ── SOCIOLOGIE & ANTHROPOLOGIE ── -->
+    <div class="deb-titre">
+      <i class="fas fa-globe-africa"></i>
+      <h3>Sociologie & Anthropologie de l'Éducation</h3>
+    </div>
+    <div class="deb-grille">
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div>
+          <h4>Enseignant / Formateur</h4>
+          <p>Formation des enseignants et des agents éducatifs dans les instituts de formation et les universités.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-flask"></i></div>
+        <div>
+          <h4>Chercheur en Sciences Sociales</h4>
+          <p>Étude des dynamiques sociales et culturelles qui façonnent les systèmes éducatifs africains.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-landmark"></i></div>
+        <div>
+          <h4>Consultant en Politiques Éducatives</h4>
+          <p>Analyse et conception de réformes éducatives pour les gouvernements et organisations internationales.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-project-diagram"></i></div>
+        <div>
+          <h4>Chargé de Projet ONG</h4>
+          <p>Gestion de programmes éducatifs pour des organisations non gouvernementales et agences onusiennes.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-chart-bar"></i></div>
+        <div>
+          <h4>Analyste des Systèmes Éducatifs</h4>
+          <p>Évaluation et diagnostic des systèmes d'enseignement en vue d'améliorer leur efficacité et équité.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico vert"><i class="fas fa-users"></i></div>
+        <div>
+          <h4>Expert en Inclusion Sociale</h4>
+          <p>Promotion de l'accès équitable à l'éducation pour les populations marginalisées et vulnérables.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deb-sep"></div>
+
+    <!-- ── TIC EN ÉDUCATION ── -->
+    <div class="deb-titre">
+      <i class="fas fa-laptop-code"></i>
+      <h3>TIC en Éducation</h3>
+    </div>
+    <div class="deb-grille">
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-pencil-ruler"></i></div>
+        <div>
+          <h4>Ingénieur Pédagogique Numérique</h4>
+          <p>Conception de dispositifs d'apprentissage numérique adaptés aux contextes éducatifs africains.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-desktop"></i></div>
+        <div>
+          <h4>Concepteur E-Learning</h4>
+          <p>Création de contenus et parcours d'apprentissage en ligne pour établissements et entreprises.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-server"></i></div>
+        <div>
+          <h4>Administrateur de Plateformes Éducatives</h4>
+          <p>Gestion et déploiement de systèmes LMS (Moodle, Canvas, etc.) dans les institutions d'enseignement.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-chalkboard"></i></div>
+        <div>
+          <h4>Formateur en Technologies Éducatives</h4>
+          <p>Formation des enseignants à l'intégration pédagogique des outils numériques dans leurs pratiques.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-digital-tachograph"></i></div>
+        <div>
+          <h4>Consultant en Transformation Digitale</h4>
+          <p>Accompagnement des établissements dans leur transition numérique et modernisation des pratiques.</p>
+        </div>
+      </div>
+
+      <div class="deb-carte">
+        <div class="deb-ico ardoise"><i class="fas fa-code"></i></div>
+        <div>
+          <h4>Développeur d'Applications Éducatives</h4>
+          <p>Développement d'outils et applications numériques dédiés à l'enseignement et à la formation.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATISTIQUES -->
+  <div class="deb-stats">
+    <div class="deb-stat">
+      <div class="deb-stat-n">94%</div>
+      <div class="deb-stat-l">Taux d'insertion professionnelle</div>
+    </div>
+    <div class="deb-stat">
+      <div class="deb-stat-n">18</div>
+      <div class="deb-stat-l">Métiers accessibles</div>
+    </div>
+    <div class="deb-stat">
+      <div class="deb-stat-n">3</div>
+      <div class="deb-stat-l">Spécialités de formation</div>
+    </div>
+    <div class="deb-stat">
+      <div class="deb-stat-n">+10</div>
+      <div class="deb-stat-l">Pays d'insertion en Afrique</div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ══════════════════════════════════════════════════════
@@ -1029,7 +1299,7 @@
     <div class="pied-col">
       <h5>Formations</h5>
       <ul>
-        <li><a onclick="afficherPage('formations')">Psychologie de l'Éducation</a></li>
+        <li><a onclick="afficherPage('formations')">PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION</a></li>
         <li><a onclick="afficherPage('formations')">Sociologie de l'Éducation</a></li>
         <li><a onclick="afficherPage('formations')">TIC en Éducation</a></li>
         <li><a onclick="afficherPage('formations')">Débouchés Professionnels</a></li>
@@ -1055,7 +1325,11 @@
 <!-- ══════════════════ JAVASCRIPT ══════════════════ -->
 <script>
 /* ── NAVIGATION ── */
+const pages = ['accueil','etudiants','professeurs','enseignants','formations','debouches','apropos','contact'];
+
 function afficherPage(nom) {
+  // Alias pour éviter les liens cassés si on utilise "enseignants"
+  if (nom === 'enseignants') nom = 'professeurs';
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-liens a').forEach(a => a.classList.remove('actif'));
   const page = document.getElementById('page-' + nom);
@@ -1064,6 +1338,27 @@ function afficherPage(nom) {
   if (lien) lien.classList.add('actif');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   animer();
+}
+
+/* ── RECHERCHE PAR PAGE ── */
+function initRecherchePage(pageId, inputId, itemSelector) {
+  const page = document.getElementById(pageId);
+  const input = document.getElementById(inputId);
+  if (!page || !input) return;
+
+  function filtrer() {
+    const q = (input.value || '').trim().toLowerCase();
+    const items = page.querySelectorAll(itemSelector);
+    items.forEach((el) => {
+      const txt = (el.textContent || '').toLowerCase().replace(/\s+/g, ' ').trim();
+      const ok = !q || txt.includes(q);
+      el.style.display = ok ? '' : 'none';
+    });
+  }
+
+  input.addEventListener('input', filtrer);
+  // appliquer au chargement si valeur existante
+  filtrer();
 }
 
 /* ── MENU MOBILE ── */
@@ -1105,6 +1400,11 @@ function envoyerFormulaire() {
 
 /* ── INIT ── */
 animer();
+initRecherchePage('page-accueil', 'recherche-accueil', '.carte, .item-nav-rapide, .atout');
+initRecherchePage('page-etudiants', 'recherche-etudiants', '.parcours-carte, .carte, .boite-conditions .condition');
+initRecherchePage('page-professeurs', 'recherche-professeurs', '.prof-carte');
+initRecherchePage('page-formations', 'recherche-formations', '.formation-detail');
+initRecherchePage('page-debouches', 'recherche-debouches', '.deb-carte');
 </script>
 
 <!-- ══════════════════════════════════════════════════════
@@ -1361,7 +1661,7 @@ animer();
     📍 INSTITUTION : Faculté des Sciences de l'Éducation — Département d'Enseignement Fondamentaux en Education, Yaoundé, Cameroun.
 
     🎓 FORMATIONS (Système LMD) :
-    1. Psychologie de l'Éducation : processus d'apprentissage, développement cognitif, psychopédagogie, troubles des apprentissages, motivation scolaire.
+    1. PSYCHOLOGIE ET PHYLOSOPHIE DE L'ÉDUCATION : processus d'apprentissage, développement cognitif, psychopédagogie, troubles des apprentissages, motivation scolaire.
     2. Sociologie et Anthropologie de l'Éducation : inégalités éducatives, politiques scolaires, dynamiques socioculturelles, inclusion, genre et éducation.
     3. TIC en Éducation : e-learning, ingénierie pédagogique, intelligence artificielle en éducation, LMS, ressources numériques.
 
@@ -1375,11 +1675,16 @@ animer();
     - Dossier : relevés de notes, diplômes, lettre de motivation, pièce d'identité
 
     👩‍🏫 RESPONSABLES ACADÉMIQUES :
-    - Pr Victor Claude EYENGA : Chef de Département, neurochirurgien et Maître de Conférences à la Faculté de Médecine de Yaoundé I
-    - Pr Valèse MAPTO KENGNE : Responsable académique à l'Université de Yaoundé I, spécialisée en sciences de l'éducation
-    - Dr Martial Aimé WAKEU : Docteur en psychologie sociale, enseignant à la FSE
-    - Dr Roger TCHAWOUO TCHOUNKEU : Médecin radiologue à Douala, formateur académique
-    - Dr TCHOUAFFI KOUM AWA : PhD en anthropologie médicale, chercheuse au CPSHP
+    - Pr Remy Magloire Dieudonné ETOUA : Recteur — Professeur Titulaire
+    - Pr BELA Cyrille Bienvenu : Doyen — Professeur Titulaire
+    - Pr Pierre-Suzanne Eyenga Onana : Chef de département et Professeur Titulaire
+    - Pr Valèse MAPTO KENGNE : Maître de Conférences
+    - Dr BIOLO Joseph Tierry Dimitri : Chargé de cours
+    - Dr Martial Aimé WAKEU : Chargé de cours
+    - Dr Roger TCHAWOUO TCHOUNKEU : Chargé de cours
+    - Dr Ingénieur AYISSI KOUNA : Dr Assistant
+    - Dr Engozo'o Rony Ivan : Dr Assistant
+    - Dr TCHOUAFFI KUM AWAH : Dr Assistant
 
     💼 DÉBOUCHÉS PROFESSIONNELS :
     - Enseignement : primaire, secondaire, supérieur, conseiller pédagogique, inspecteur
