@@ -504,13 +504,13 @@
         </div>
       </div>
 
-      <!-- PROFESSEURS -->
+      <!-- CHEF DU DÉPARTEMENT -->
       <div class="hierarchie-titre">
         <span class="hierarchie-badge"><i class="fas fa-university"></i></span>
-        <h3>Enseignants</h3>
+        <h3>Chef du Département</h3>
       </div>
       <div class="grille-profs">
-        <div class="prof-carte">
+        <div class="prof-carte prof-carte--petite">
           <img src="image/eyenga.png" alt="Pr Pierre-Suzanne Eyenga Onana" class="prof-photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -525,8 +525,15 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="prof-carte">
+      <!-- ENSEIGNANTS -->
+      <div class="hierarchie-titre">
+        <span class="hierarchie-badge"><i class="fas fa-university"></i></span>
+        <h3>Enseignants</h3>
+      </div>
+      <div class="grille-profs">
+        <div class="prof-carte prof-carte--petite">
           <img src="image/kengne.png" alt="Pr Valèse MAPTO KENGNE" class="prof-photo"
               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="prof-photo-placeholder" style="display:none;"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -1292,6 +1299,7 @@
         <li><a onclick="afficherPage('etudiants')">Étudiants</a></li>
         <li><a onclick="afficherPage('professeurs')">Équipe enseignants</a></li>
         <li><a onclick="afficherPage('formations')">Formations</a></li>
+        <li><a onclick="afficherPage('debouches')">Débouchés</a></li>
         <li><a onclick="afficherPage('apropos')">À propos</a></li>
         <li><a onclick="afficherPage('contact')">Contact</a></li>
       </ul>
