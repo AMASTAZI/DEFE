@@ -1,0 +1,233 @@
+<div id="page-contact" class="page">
+  <div class="entete-page">
+    <div class="entete-tag">Nous Contacter</div>
+    <h1>Nous Sommes à Votre Écoute</h1>
+    <p>Étudiants, chercheurs, partenaires — notre équipe répond à toutes vos questions dans les meilleurs délais.</p>
+  </div>
+ 
+  <section>
+    <div class="contact-grille">
+      <div class="contact-info">
+        <h2>Coordonnées du Département</h2>
+        <div class="diviseur"></div>
+        <p>Pour toute demande sur les formations, admissions ou partenariats, contactez-nous par téléphone, WhatsApp ou via le formulaire.</p>
+ 
+        <div class="item-contact">
+          <div class="icone-contact"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="detail-contact">
+            <h4>Adresse</h4>
+            <p>Département d'Enseignement Fondamentaux en Éducation<br>Faculté des Sciences de l'Éducation — Yaoundé, Cameroun</p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact"><i class="fas fa-phone"></i></div>
+          <div class="detail-contact">
+            <h4>Téléphone</h4>
+            <p><a href="tel:+237699337283">+237 699 337 283</a></p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact"><i class="fas fa-envelope"></i></div>
+          <div class="detail-contact">
+            <h4>Adresse e-mail</h4>
+            <p><a href="mailto:engelbert.ayissi@univ-yaounde1.cm">engelbert.ayissi@univ-yaounde1.cm</a></p>
+          </div>
+        </div>
+        <div class="item-contact">
+          <div class="icone-contact"><i class="fas fa-clock"></i></div>
+          <div class="detail-contact">
+            <h4>Heures d'ouverture</h4>
+            <p>Lundi – Vendredi : 7h30 – 15h30<br>Samedi : 8h00 – 12h00</p>
+          </div>
+        </div>
+ 
+        <a class="whatsapp" href="https://wa.me/237699337283" target="_blank">
+          <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+          Discuter sur WhatsApp
+        </a>
+ 
+        <!-- Lien admin discret -->
+        <div style="margin-top:32px;padding-top:20px;border-top:1px solid var(--bordure);">
+          <a href="admin/index.html" style="font-size:11px;color:var(--texte-doux);display:inline-flex;align-items:center;gap:6px;transition:0.2s;" onmouseover="this.style.color='var(--bleu)'" onmouseout="this.style.color='var(--texte-doux)'">
+            <i class="fas fa-lock"></i>Accès administration
+          </a>
+        </div>
+      </div>
+ 
+      <!-- FORMULAIRE -->
+      <div class="formulaire-boite">
+        <h3>Envoyer un Message</h3>
+ 
+        <!-- Alerte succès -->
+        <div id="contact-succes" style="display:none;background:#D9F0E4;border:1px solid #1FA050;color:#0B5C2E;border-radius:9px;padding:14px 16px;margin-bottom:18px;font-size:13.5px;align-items:center;gap:10px;">
+          <i class="fas fa-check-circle" style="font-size:18px;"></i>
+          <div>
+            <strong>Message envoyé avec succès !</strong><br>
+            <span style="font-size:12.5px;opacity:0.85;">Nous vous répondrons dans les meilleurs délais.</span>
+          </div>
+        </div>
+ 
+        <!-- Alerte erreur -->
+        <div id="contact-erreur" style="display:none;background:#FEE2E2;border:1px solid #DC2626;color:#991B1B;border-radius:9px;padding:12px 16px;margin-bottom:18px;font-size:13px;align-items:center;gap:8px;">
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="contact-erreur-txt">Veuillez remplir tous les champs obligatoires.</span>
+        </div>
+ 
+        <div class="rangee">
+          <div class="groupe">
+            <label>Prénom <span style="color:#DC2626;">*</span></label>
+            <input type="text" id="c-prenom" placeholder="Jean">
+          </div>
+          <div class="groupe">
+            <label>Nom <span style="color:#DC2626;">*</span></label>
+            <input type="text" id="c-nom" placeholder="Mbarga">
+          </div>
+        </div>
+        <div class="groupe">
+          <label>Adresse e-mail <span style="color:#DC2626;">*</span></label>
+          <input type="email" id="c-email" placeholder="votre@email.com">
+        </div>
+        <div class="groupe">
+          <label>Téléphone / WhatsApp</label>
+          <input type="tel" id="c-tel" placeholder="+237 6XX XXX XXX">
+        </div>
+        <div class="groupe">
+          <label>Je suis...</label>
+          <select id="c-profil">
+            <option value="">Sélectionnez votre profil</option>
+            <option>Étudiant(e) en Licence</option>
+            <option>Étudiant(e) en Master</option>
+            <option>Candidat(e) au Doctorat</option>
+            <option>Enseignant(e) / Chercheur(e)</option>
+            <option>Institution / Partenaire</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="groupe">
+          <label>Sujet</label>
+          <input type="text" id="c-sujet" placeholder="Demande d'inscription · Renseignements · Autre">
+        </div>
+        <div class="groupe">
+          <label>Votre Message <span style="color:#DC2626;">*</span></label>
+          <textarea id="c-message" placeholder="Décrivez votre demande ou vos questions..."></textarea>
+        </div>
+        <button class="btn-envoyer" id="btn-contact-envoyer" onclick="envoyerContact()">
+          <i class="fas fa-paper-plane" style="margin-right:8px;"></i>Envoyer le Message
+        </button>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- LOCALISATION -->
+  <div class="section-carte">
+    <div class="centre">
+      <div class="etiquette">Localisation</div>
+      <h2 class="titre-section">Nous Trouver</h2>
+      <p>Faculté des Sciences de l'Éducation · Yaoundé, Cameroun</p>
+    </div>
+    <div class="carte-carte">
+      <div class="carte-label">
+        <i class="fas fa-map-marker-alt" style="font-size:40px;color:var(--bleu);position:relative;z-index:1;"></i>
+        <p style="position:relative;z-index:1;font-size:13px;color:var(--texte-doux);margin-top:8px;">
+          Intégrez ici votre carte Google Maps<br>
+          <small style="opacity:0.6;">(Remplacer par un iframe Google Maps)</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+ 
+<!-- ══════════════════════════════════════════════
+  BLOC 2 — JAVASCRIPT à ajouter avant </script>
+  (juste avant la balise de fermeture </script> finale)
+══════════════════════════════════════════════ -->
+<script>
+/* ── SYSTÈME DE MESSAGERIE — LOCALSTORAGE ── */
+ 
+function genId() {
+  return 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2,6);
+}
+ 
+function getMsgs() {
+  return JSON.parse(localStorage.getItem('fse_messages') || '[]');
+}
+ 
+function saveMsgs(msgs) {
+  localStorage.setItem('fse_messages', JSON.stringify(msgs));
+}
+ 
+function envoyerContact() {
+  const prenom  = (document.getElementById('c-prenom')?.value || '').trim();
+  const nom     = (document.getElementById('c-nom')?.value || '').trim();
+  const email   = (document.getElementById('c-email')?.value || '').trim();
+  const tel     = (document.getElementById('c-tel')?.value || '').trim();
+  const profil  = (document.getElementById('c-profil')?.value || '').trim();
+  const sujet   = (document.getElementById('c-sujet')?.value || '').trim();
+  const message = (document.getElementById('c-message')?.value || '').trim();
+ 
+  const succes  = document.getElementById('contact-succes');
+  const erreur  = document.getElementById('contact-erreur');
+  const errTxt  = document.getElementById('contact-erreur-txt');
+  const btn     = document.getElementById('btn-contact-envoyer');
+ 
+  // Reset alertes
+  succes.style.display  = 'none';
+  erreur.style.display  = 'none';
+ 
+  // Validation
+  if (!prenom || !nom) {
+    errTxt.textContent = 'Veuillez renseigner votre prénom et nom.';
+    erreur.style.display = 'flex';
+    return;
+  }
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errTxt.textContent = 'Veuillez saisir une adresse e-mail valide.';
+    erreur.style.display = 'flex';
+    return;
+  }
+  if (!message) {
+    errTxt.textContent = 'Veuillez écrire votre message.';
+    erreur.style.display = 'flex';
+    return;
+  }
+ 
+  // Sauvegarde
+  const msgs = getMsgs();
+  msgs.push({
+    id:      genId(),
+    nom:     prenom + ' ' + nom,
+    email:   email,
+    tel:     tel,
+    profil:  profil,
+    sujet:   sujet,
+    message: message,
+    date:    new Date().toISOString(),
+    statut:  'nouveau'
+  });
+  saveMsgs(msgs);
+ 
+  // Animation bouton
+  btn.innerHTML = '<i class="fas fa-check" style="margin-right:8px;"></i>Message envoyé !';
+  btn.style.background = 'linear-gradient(135deg,#0B5C2E,#157A3E)';
+  btn.disabled = true;
+ 
+  // Afficher succès
+  succes.style.display = 'flex';
+ 
+  // Reset formulaire après 3s
+  setTimeout(() => {
+    ['c-prenom','c-nom','c-email','c-tel','c-sujet','c-message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    const sel = document.getElementById('c-profil');
+    if (sel) sel.selectedIndex = 0;
+    btn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right:8px;"></i>Envoyer le Message';
+    btn.style.background = '';
+    btn.disabled = false;
+    succes.style.display = 'none';
+  }, 4000);
+}
+</script>
+ 

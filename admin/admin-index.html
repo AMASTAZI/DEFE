@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration — Faculté des Sciences de l'Éducation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --bleu:      #0B5C2E;
+  --bleu-mid:  #157A3E;
+  --bleu-lgt:  #1FA050;
+  --or:        #E0AE20;
+  --rouge:     #DC2626;
+  --rouge-lgt: #FEE2E2;
+  --blanc:     #FFFFFF;
+  --fond:      #F0FAF4;
+  --fond-dk:   #D9F0E4;
+  --texte:     #091A0F;
+  --texte-mid: #1E4030;
+  --texte-doux:#4A7560;
+  --bordure:   rgba(11,92,46,0.13);
+  --ombre-sm:  0 2px 12px rgba(11,92,46,0.09);
+  --ombre-md:  0 8px 32px rgba(11,92,46,0.14);
+  --r:         10px;
+  --r-lg:      16px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Source Sans 3',sans-serif;background:var(--fond);color:var(--texte);min-height:100vh;}
+a{text-decoration:none;color:inherit;}
+button{cursor:pointer;font-family:inherit;}
+
+/* ── LOGIN OVERLAY ── */
+#login-overlay {
+  position:fixed;inset:0;z-index:9999;
+  background:linear-gradient(135deg,var(--bleu) 0%,#042D12 100%);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+}
+.login-box {
+  background:var(--blanc);border-radius:var(--r-lg);
+  width:100%;max-width:420px;overflow:hidden;
+  box-shadow:0 32px 80px rgba(0,0,0,0.4);
+  animation:pop-in 0.4s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes pop-in{from{opacity:0;transform:scale(0.85);}to{opacity:1;transform:scale(1);}}
+
+.login-header {
+  background:linear-gradient(135deg,var(--bleu),var(--bleu-mid));
+  padding:32px 32px 24px;color:var(--blanc);text-align:center;
+  border-bottom:3px solid var(--or);
+}
+.login-logo {
+  width:56px;height:56px;border-radius:12px;background:var(--or);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 14px;font-family:'Libre Baskerville',serif;
+  font-size:22px;font-weight:700;color:var(--bleu);overflow:hidden;
+}
+.login-logo img{width:100%;height:100%;object-fit:cover;border-radius:12px;}
+.login-header h2{font-family:'Libre Baskerville',serif;font-size:22px;margin-bottom:4px;}
+.login-header p{font-size:12px;color:rgba(255,255,255,0.6);letter-spacing:1px;}
+
+.login-body{padding:28px 32px 32px;}
+.login-body h3{font-family:'Libre Baskerville',serif;font-size:20px;color:var(--bleu);margin-bottom:20px;}
+
+.form-g{margin-bottom:16px;}
+.form-g label{display:block;font-size:12px;font-weight:700;color:var(--texte-mid);margin-bottom:6px;letter-spacing:0.3px;}
+.form-g input{
+  width:100%;padding:11px 14px 11px 40px;
+  border:1.5px solid var(--bordure);border-radius:8px;
+  font-size:14px;font-family:'Source Sans 3',sans-serif;
+  color:var(--texte);background:var(--fond);outline:none;transition:0.2s;
+  position:relative;
+}
+.form-g input:focus{border-color:var(--bleu-lgt);background:var(--blanc);box-shadow:0 0 0 4px rgba(11,92,46,0.07);}
+.input-wrap{position:relative;}
+.input-wrap i{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--texte-doux);font-size:14px;}
+
+.btn-login{
+  width:100%;padding:13px;
+  background:linear-gradient(135deg,var(--bleu),var(--bleu-mid));
+  color:var(--blanc);border:none;border-radius:9px;
+  font-size:15px;font-weight:700;transition:0.3s;
+  box-shadow:0 4px 16px rgba(11,92,46,0.3);margin-top:6px;
+}
+.btn-login:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(11,92,46,0.4);}
+
+.login-retour{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:18px;font-size:13px;color:var(--texte-doux);
+  cursor:pointer;transition:0.2s;
+}
+.login-retour:hover{color:var(--bleu);}
+
+.login-error{
+  background:#FEE2E2;color:#991B1B;border:1px solid #FECACA;
+  border-radius:8px;padding:10px 14px;font-size:13px;margin-bottom:14px;
+  display:none;align-items:center;gap:8px;
+}
+.login-error.visible{display:flex;}
+
+/* ── DASHBOARD ── */
+#dashboard{display:none;}
+#dashboard.visible{display:block;}
+
+/* TOP BAR */
+.topbar{
+  background:linear-gradient(135deg,var(--bleu),#042D12);
+  border-bottom:3px solid var(--or);
+  padding:0 4%;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 4px 24px rgba(0,0,0,0.25);
+}
+.topbar-logo{display:flex;align-items:center;gap:12px;}
+.topbar-logo-mark{
+  width:38px;height:38px;border-radius:8px;background:var(--or);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Libre Baskerville',serif;font-size:15px;font-weight:700;
+  color:var(--bleu);overflow:hidden;flex-shrink:0;
+}
+.topbar-logo-mark img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+.topbar-logo span{font-size:14px;font-weight:700;color:var(--blanc);}
+.topbar-logo small{display:block;font-size:10px;color:rgba(255,255,255,0.5);letter-spacing:1px;}
+
+.topbar-right{display:flex;align-items:center;gap:12px;}
+.admin-badge{
+  background:rgba(224,174,32,0.2);border:1px solid rgba(224,174,32,0.4);
+  color:var(--or);font-size:11px;font-weight:700;padding:4px 12px;
+  border-radius:50px;letter-spacing:1px;text-transform:uppercase;
+}
+.btn-deconnect{
+  display:flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:rgba(255,255,255,0.8);padding:7px 14px;border-radius:7px;
+  font-size:13px;font-weight:500;transition:0.2s;
+}
+.btn-deconnect:hover{background:rgba(220,38,38,0.3);border-color:rgba(220,38,38,0.5);color:var(--blanc);}
+
+/* MAIN */
+main{padding:36px 4%;max-width:1200px;margin:0 auto;}
+
+/* STATS CARDS */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:32px;}
+.stat-c{
+  background:var(--blanc);border-radius:var(--r-lg);padding:22px 24px;
+  box-shadow:var(--ombre-sm);border:1px solid var(--bordure);
+  display:flex;align-items:center;gap:16px;transition:0.3s;
+}
+.stat-c:hover{transform:translateY(-3px);box-shadow:var(--ombre-md);}
+.stat-ico{
+  width:46px;height:46px;border-radius:12px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--blanc);
+}
+.stat-ico.vert{background:linear-gradient(135deg,var(--bleu),var(--bleu-mid));}
+.stat-ico.or{background:linear-gradient(135deg,#92680A,var(--or));}
+.stat-ico.rouge{background:linear-gradient(135deg,#991B1B,var(--rouge));}
+.stat-ico.ardoise{background:linear-gradient(135deg,#2D4A6B,#3D6A9B);}
+.stat-n{font-family:'Libre Baskerville',serif;font-size:32px;font-weight:700;color:var(--bleu);line-height:1;}
+.stat-l{font-size:12px;color:var(--texte-doux);margin-top:3px;}
+
+/* PANEL */
+.panel{background:var(--blanc);border-radius:var(--r-lg);box-shadow:var(--ombre-sm);border:1px solid var(--bordure);overflow:hidden;}
+.panel-header{
+  padding:18px 24px;border-bottom:1px solid var(--bordure);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.panel-header h2{font-family:'Libre Baskerville',serif;font-size:20px;color:var(--bleu);display:flex;align-items:center;gap:10px;}
+.panel-header h2 i{font-size:16px;color:var(--bleu-lgt);}
+
+.toolbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.search-box{display:flex;align-items:center;gap:8px;background:var(--fond);border:1.5px solid var(--bordure);border-radius:8px;padding:7px 12px;transition:0.2s;}
+.search-box:focus-within{border-color:var(--bleu-lgt);background:var(--blanc);}
+.search-box i{font-size:13px;color:var(--texte-doux);}
+.search-box input{border:none;background:none;outline:none;font-size:13px;font-family:'Source Sans 3',sans-serif;color:var(--texte);width:180px;}
+
+.filtre-sel{
+  padding:7px 12px;border:1.5px solid var(--bordure);border-radius:8px;
+  font-size:13px;font-family:'Source Sans 3',sans-serif;color:var(--texte);
+  background:var(--fond);outline:none;cursor:pointer;transition:0.2s;
+}
+.filtre-sel:focus{border-color:var(--bleu-lgt);}
+
+/* TABLE */
+.table-wrap{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;}
+thead{background:var(--fond);}
+th{
+  padding:12px 16px;text-align:left;
+  font-size:11px;font-weight:700;color:var(--texte-doux);
+  letter-spacing:1.2px;text-transform:uppercase;
+  border-bottom:1px solid var(--bordure);white-space:nowrap;
+}
+td{
+  padding:14px 16px;font-size:13.5px;color:var(--texte-mid);
+  border-bottom:1px solid rgba(11,92,46,0.05);vertical-align:middle;
+}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(11,92,46,0.02);}
+
+.msg-nom{font-weight:700;color:var(--bleu);}
+.msg-email{font-size:12px;color:var(--texte-doux);}
+.msg-apercu{
+  max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font-size:13px;color:var(--texte-doux);
+}
+.msg-date{font-size:12px;color:var(--texte-doux);white-space:nowrap;}
+
+.badge-new{
+  background:linear-gradient(135deg,var(--bleu),var(--bleu-mid));
+  color:var(--blanc);font-size:10px;font-weight:700;padding:2px 8px;
+  border-radius:50px;letter-spacing:0.5px;display:inline-block;
+}
+.badge-lu{
+  background:var(--fond-dk);color:var(--texte-doux);font-size:10px;
+  font-weight:600;padding:2px 8px;border-radius:50px;display:inline-block;
+}
+
+.btn-action{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;
+  border:none;transition:0.2s;
+}
+.btn-voir{background:var(--fond-dk);color:var(--bleu);}
+.btn-voir:hover{background:var(--bleu);color:var(--blanc);}
+.btn-del{background:var(--rouge-lgt);color:var(--rouge);}
+.btn-del:hover{background:var(--rouge);color:var(--blanc);}
+.actions-cell{display:flex;gap:6px;align-items:center;}
+
+/* VIDE */
+.vide{padding:56px 24px;text-align:center;color:var(--texte-doux);}
+.vide i{font-size:48px;color:var(--fond-dk);margin-bottom:14px;}
+.vide p{font-size:15px;}
+.vide small{font-size:13px;color:var(--texte-doux);margin-top:4px;display:block;}
+
+/* PAGINATION */
+.pagination{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;border-top:1px solid var(--bordure);flex-wrap:wrap;gap:10px;
+}
+.pag-info{font-size:13px;color:var(--texte-doux);}
+.pag-btns{display:flex;gap:6px;align-items:center;}
+.pag-btn{
+  width:34px;height:34px;border-radius:7px;border:1.5px solid var(--bordure);
+  background:var(--blanc);color:var(--texte-mid);font-size:13px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;transition:0.2s;
+}
+.pag-btn:hover:not(:disabled){background:var(--bleu);color:var(--blanc);border-color:var(--bleu);}
+.pag-btn.actif{background:var(--bleu);color:var(--blanc);border-color:var(--bleu);}
+.pag-btn:disabled{opacity:0.35;cursor:not-allowed;}
+
+/* ── MODAL MESSAGE ── */
+#modal-msg{display:none;position:fixed;inset:0;z-index:5000;align-items:center;justify-content:center;padding:20px;}
+#modal-msg.ouvert{display:flex;}
+.modal-fond{position:absolute;inset:0;background:rgba(4,45,18,0.7);backdrop-filter:blur(6px);}
+.modal-boite{
+  position:relative;z-index:1;background:var(--blanc);
+  border-radius:var(--r-lg);max-width:560px;width:100%;
+  overflow:hidden;box-shadow:0 24px 72px rgba(11,92,46,0.3);
+  animation:modal-in 0.32s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modal-in{from{opacity:0;transform:scale(0.88) translateY(16px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.modal-en{
+  padding:20px 22px;
+  background:linear-gradient(135deg,var(--bleu),var(--bleu-mid));
+  color:var(--blanc);display:flex;align-items:center;justify-content:space-between;
+  border-bottom:2px solid var(--or);
+}
+.modal-en h3{font-family:'Libre Baskerville',serif;font-size:18px;}
+.modal-en-meta{font-size:11.5px;color:rgba(255,255,255,0.6);margin-top:3px;}
+.modal-x{
+  background:rgba(255,255,255,0.15);border:none;color:var(--blanc);
+  width:30px;height:30px;border-radius:50%;font-size:15px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:0.2s;flex-shrink:0;
+}
+.modal-x:hover{background:rgba(255,255,255,0.3);}
+.modal-corps{padding:24px;}
+.modal-champ{margin-bottom:18px;}
+.modal-champ label{display:block;font-size:11px;font-weight:700;color:var(--texte-doux);margin-bottom:5px;letter-spacing:1px;text-transform:uppercase;}
+.modal-champ p{font-size:14px;color:var(--texte-mid);line-height:1.7;}
+.modal-champ a{color:var(--bleu-lgt);font-weight:600;}
+.modal-msg-box{
+  background:var(--fond);border-radius:8px;padding:14px 16px;
+  font-size:14px;color:var(--texte-mid);line-height:1.75;
+  border:1px solid var(--bordure);max-height:200px;overflow-y:auto;
+  white-space:pre-wrap;word-break:break-word;
+}
+.modal-footer{padding:16px 24px;border-top:1px solid var(--bordure);display:flex;justify-content:flex-end;gap:10px;}
+.btn-del2{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 20px;background:var(--rouge);color:var(--blanc);
+  border:none;border-radius:8px;font-size:13.5px;font-weight:700;transition:0.3s;
+}
+.btn-del2:hover{background:#991B1B;transform:translateY(-1px);}
+.btn-fermer{
+  display:flex;align-items:center;gap:7px;
+  padding:9px 20px;background:var(--fond-dk);color:var(--texte-mid);
+  border:none;border-radius:8px;font-size:13.5px;font-weight:600;transition:0.2s;
+}
+.btn-fermer:hover{background:var(--fond);}
+
+/* ── CONFIRM DELETE ── */
+#confirm-del{display:none;position:fixed;inset:0;z-index:6000;align-items:center;justify-content:center;padding:20px;}
+#confirm-del.ouvert{display:flex;}
+.confirm-box{
+  position:relative;z-index:1;background:var(--blanc);border-radius:var(--r-lg);
+  max-width:400px;width:100%;padding:32px;text-align:center;
+  box-shadow:0 24px 72px rgba(220,38,38,0.25);
+  animation:modal-in 0.28s ease;
+}
+.confirm-ico{width:56px;height:56px;background:var(--rouge-lgt);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--rouge);}
+.confirm-box h3{font-family:'Libre Baskerville',serif;font-size:20px;color:var(--texte);margin-bottom:8px;}
+.confirm-box p{font-size:13.5px;color:var(--texte-doux);line-height:1.6;margin-bottom:22px;}
+.confirm-btns{display:flex;gap:10px;justify-content:center;}
+.btn-annuler{padding:10px 22px;background:var(--fond-dk);color:var(--texte-mid);border:none;border-radius:8px;font-size:14px;font-weight:600;transition:0.2s;}
+.btn-annuler:hover{background:var(--fond);}
+.btn-confirmer{padding:10px 22px;background:var(--rouge);color:var(--blanc);border:none;border-radius:8px;font-size:14px;font-weight:700;transition:0.3s;}
+.btn-confirmer:hover{background:#991B1B;}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(100px);
+  background:var(--bleu);color:var(--blanc);
+  padding:12px 22px;border-radius:50px;font-size:13.5px;font-weight:600;
+  box-shadow:0 8px 24px rgba(11,92,46,0.35);z-index:9000;
+  transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  display:flex;align-items:center;gap:8px;
+}
+.toast.visible{transform:translateX(-50%) translateY(0);}
+.toast.rouge{background:var(--rouge);}
+
+/* RESPONSIVE */
+@media(max-width:700px){
+  main{padding:22px 4%;}
+  .topbar-logo small,.admin-badge{display:none;}
+  .search-box input{width:120px;}
+  th:nth-child(3),td:nth-child(3){display:none;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ LOGIN OVERLAY ══════════════════ -->
+<div id="login-overlay">
+  <div class="login-box">
+    <div class="login-header">
+      <div class="login-logo">
+        <img src="../image/logo.jpg" alt="Logo" onerror="this.style.display='none';this.parentElement.innerHTML='FSE';">
+      </div>
+      <h2>Espace Administrateur</h2>
+      <p>FACULTÉ DES SCIENCES DE L'ÉDUCATION</p>
+    </div>
+    <div class="login-body">
+      <h3>Connexion requise</h3>
+      <div class="login-error" id="login-err">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>Identifiants incorrects. Veuillez réessayer.</span>
+      </div>
+      <div class="form-g">
+        <label>Adresse e-mail</label>
+        <div class="input-wrap">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="admin-email" placeholder="admin@fse.cm" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-g">
+        <label>Mot de passe</label>
+        <div class="input-wrap">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="admin-pwd" placeholder="••••••••" autocomplete="current-password">
+        </div>
+      </div>
+      <button class="btn-login" onclick="login()">
+        <i class="fas fa-sign-in-alt" style="margin-right:8px;"></i>Se connecter
+      </button>
+      <div class="login-retour" onclick="retourSite()">
+        <i class="fas fa-arrow-left"></i>
+        <span>Retour au site</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ DASHBOARD ══════════════════ -->
+<div id="dashboard">
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      <div class="topbar-logo-mark">
+        <img src="../image/logo.jpg" alt="Logo" onerror="this.style.display='none';this.parentElement.innerHTML='FSE';">
+      </div>
+      <div>
+        <span>Tableau de Bord Admin</span>
+        <small>FSE — YAOUNDÉ I</small>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="admin-badge"><i class="fas fa-shield-alt" style="margin-right:5px;"></i>Administrateur</div>
+      <button class="btn-deconnect" onclick="deconnecter()">
+        <i class="fas fa-sign-out-alt"></i>Déconnexion
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- STATS -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-c">
+        <div class="stat-ico vert"><i class="fas fa-envelope-open-text"></i></div>
+        <div>
+          <div class="stat-n" id="s-total">0</div>
+          <div class="stat-l">Messages au total</div>
+        </div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-ico or"><i class="fas fa-bell"></i></div>
+        <div>
+          <div class="stat-n" id="s-new">0</div>
+          <div class="stat-l">Non lus</div>
+        </div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-ico ardoise"><i class="fas fa-check-double"></i></div>
+        <div>
+          <div class="stat-n" id="s-lu">0</div>
+          <div class="stat-l">Lus</div>
+        </div>
+      </div>
+      <div class="stat-c">
+        <div class="stat-ico rouge"><i class="fas fa-trash-alt"></i></div>
+        <div>
+          <div class="stat-n" id="s-del">0</div>
+          <div class="stat-l">Supprimés</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL MESSAGES -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2><i class="fas fa-inbox"></i>Messages reçus</h2>
+        <div class="toolbar">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-msg" placeholder="Rechercher..." oninput="filtrerMessages()">
+          </div>
+          <select class="filtre-sel" id="filtre-statut" onchange="filtrerMessages()">
+            <option value="tous">Tous les messages</option>
+            <option value="nouveau">Non lus</option>
+            <option value="lu">Lus</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Statut</th>
+              <th>Expéditeur</th>
+              <th>Aperçu du message</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="msgs-tbody"></tbody>
+        </table>
+        <div class="vide" id="vide-msg" style="display:none;">
+          <i class="fas fa-inbox"></i>
+          <p>Aucun message trouvé</p>
+          <small>Les messages soumis via le formulaire de contact apparaîtront ici.</small>
+        </div>
+      </div>
+
+      <div class="pagination" id="pagination">
+        <div class="pag-info" id="pag-info"></div>
+        <div class="pag-btns" id="pag-btns"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ══════════════════ MODAL MESSAGE ══════════════════ -->
+<div id="modal-msg">
+  <div class="modal-fond" onclick="fermerModalMsg()"></div>
+  <div class="modal-boite">
+    <div class="modal-en">
+      <div>
+        <h3 id="m-nom">—</h3>
+        <div class="modal-en-meta" id="m-meta">—</div>
+      </div>
+      <button class="modal-x" onclick="fermerModalMsg()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-corps">
+      <div class="modal-champ">
+        <label><i class="fas fa-envelope" style="margin-right:5px;"></i>Email</label>
+        <p><a id="m-email" href="#">—</a></p>
+      </div>
+      <div class="modal-champ">
+        <label><i class="fas fa-user" style="margin-right:5px;"></i>Profil</label>
+        <p id="m-profil">—</p>
+      </div>
+      <div class="modal-champ">
+        <label><i class="fas fa-tag" style="margin-right:5px;"></i>Sujet</label>
+        <p id="m-sujet">—</p>
+      </div>
+      <div class="modal-champ">
+        <label><i class="fas fa-comment-alt" style="margin-right:5px;"></i>Message</label>
+        <div class="modal-msg-box" id="m-msg">—</div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-fermer" onclick="fermerModalMsg()"><i class="fas fa-times"></i>Fermer</button>
+      <button class="btn-del2" id="m-del-btn" onclick="demanderSuppression()">
+        <i class="fas fa-trash-alt"></i>Supprimer
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════ CONFIRM DELETE ══════════════════ -->
+<div id="confirm-del">
+  <div class="modal-fond" onclick="annulerSuppression()"></div>
+  <div class="confirm-box">
+    <div class="confirm-ico"><i class="fas fa-trash-alt"></i></div>
+    <h3>Supprimer ce message ?</h3>
+    <p>Cette action est irréversible. Le message sera définitivement supprimé de la boîte de réception.</p>
+    <div class="confirm-btns">
+      <button class="btn-annuler" onclick="annulerSuppression()">Annuler</button>
+      <button class="btn-confirmer" onclick="confirmerSuppression()">Supprimer</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ═══════════════════════════════════════════
+// CONFIG ADMIN (démo uniquement — non sécurisé)
+// ═══════════════════════════════════════════
+const ADMIN = {
+  email: 'admin@fse.cm',
+  password: 'fse2024'
+};
+
+const PAR_PAGE = 10;
+let pageCourante = 1;
+let messagesFiltres = [];
+let msgCourantId = null;
+let nbSupprimes = parseInt(localStorage.getItem('fse_del_count') || '0');
+
+// ═══════════════════════════════════════════
+// AUTH
+// ═══════════════════════════════════════════
+function login() {
+  const email = document.getElementById('admin-email').value.trim();
+  const pwd   = document.getElementById('admin-pwd').value;
+  const err   = document.getElementById('login-err');
+
+  if (email === ADMIN.email && pwd === ADMIN.password) {
+    sessionStorage.setItem('fse_admin', '1');
+    err.classList.remove('visible');
+    document.getElementById('login-overlay').style.display = 'none';
+    document.getElementById('dashboard').classList.add('visible');
+    chargerDashboard();
+  } else {
+    err.classList.add('visible');
+    document.getElementById('admin-pwd').value = '';
+    document.getElementById('admin-pwd').focus();
+  }
+}
+
+function deconnecter() {
+  sessionStorage.removeItem('fse_admin');
+  location.reload();
+}
+
+function retourSite() {
+  window.location.href = '../index.html';
+}
+
+// Entrée clavier sur le login
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && document.getElementById('login-overlay').style.display !== 'none') {
+    login();
+  }
+  if (e.key === 'Escape') {
+    fermerModalMsg();
+    annulerSuppression();
+  }
+});
+
+// Vérif session au chargement
+window.addEventListener('load', () => {
+  if (sessionStorage.getItem('fse_admin') === '1') {
+    document.getElementById('login-overlay').style.display = 'none';
+    document.getElementById('dashboard').classList.add('visible');
+    chargerDashboard();
+  }
+});
+
+// ═══════════════════════════════════════════
+// DONNÉES
+// ═══════════════════════════════════════════
+function getMsgs() {
+  return JSON.parse(localStorage.getItem('fse_messages') || '[]');
+}
+function saveMsgs(msgs) {
+  localStorage.setItem('fse_messages', JSON.stringify(msgs));
+}
+
+// ═══════════════════════════════════════════
+// DASHBOARD
+// ═══════════════════════════════════════════
+function chargerDashboard() {
+  mettreAJourStats();
+  filtrerMessages();
+}
+
+function mettreAJourStats() {
+  const msgs = getMsgs();
+  const total = msgs.length;
+  const nonLus = msgs.filter(m => m.statut === 'nouveau').length;
+  const lus = msgs.filter(m => m.statut === 'lu').length;
+  document.getElementById('s-total').textContent = total;
+  document.getElementById('s-new').textContent   = nonLus;
+  document.getElementById('s-lu').textContent    = lus;
+  document.getElementById('s-del').textContent   = nbSupprimes;
+}
+
+function filtrerMessages() {
+  const q = (document.getElementById('search-msg').value || '').toLowerCase().trim();
+  const statut = document.getElementById('filtre-statut').value;
+  const msgs = getMsgs();
+
+  messagesFiltres = msgs.filter(m => {
+    const match = !q || [m.nom,m.email,m.message,m.sujet,m.profil].join(' ').toLowerCase().includes(q);
+    const matchSt = statut === 'tous' || m.statut === statut;
+    return match && matchSt;
+  }).sort((a,b) => new Date(b.date) - new Date(a.date));
+
+  pageCourante = 1;
+  afficherPage();
+}
+
+function afficherPage() {
+  const debut = (pageCourante - 1) * PAR_PAGE;
+  const fin   = debut + PAR_PAGE;
+  const pageMsgs = messagesFiltres.slice(debut, fin);
+  const tbody = document.getElementById('msgs-tbody');
+  const vide  = document.getElementById('vide-msg');
+
+  tbody.innerHTML = '';
+
+  if (messagesFiltres.length === 0) {
+    vide.style.display = 'block';
+    document.getElementById('pagination').style.display = 'none';
+    return;
+  }
+
+  vide.style.display = 'none';
+  document.getElementById('pagination').style.display = 'flex';
+
+  pageMsgs.forEach(msg => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>
+        ${msg.statut === 'nouveau'
+          ? '<span class="badge-new"><i class="fas fa-circle" style="font-size:7px;margin-right:4px;"></i>Nouveau</span>'
+          : '<span class="badge-lu"><i class="fas fa-check" style="font-size:9px;margin-right:4px;"></i>Lu</span>'}
+      </td>
+      <td>
+        <div class="msg-nom">${esc(msg.nom)}</div>
+        <div class="msg-email">${esc(msg.email)}</div>
+      </td>
+      <td><div class="msg-apercu">${esc(msg.message)}</div></td>
+      <td><div class="msg-date">${formaterDate(msg.date)}</div></td>
+      <td>
+        <div class="actions-cell">
+          <button class="btn-action btn-voir" onclick="voirMessage('${msg.id}')">
+            <i class="fas fa-eye"></i>Voir
+          </button>
+          <button class="btn-action btn-del" onclick="demanderSuppressionDirecte('${msg.id}')">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  mettreAJourPagination();
+}
+
+function mettreAJourPagination() {
+  const total = messagesFiltres.length;
+  const totalPages = Math.ceil(total / PAR_PAGE);
+  const debut = (pageCourante - 1) * PAR_PAGE + 1;
+  const fin   = Math.min(pageCourante * PAR_PAGE, total);
+
+  document.getElementById('pag-info').textContent = `${debut}–${fin} sur ${total} message${total > 1 ? 's' : ''}`;
+
+  const btns = document.getElementById('pag-btns');
+  btns.innerHTML = '';
+
+  // Précédent
+  const prev = document.createElement('button');
+  prev.className = 'pag-btn';
+  prev.innerHTML = '<i class="fas fa-chevron-left"></i>';
+  prev.disabled = pageCourante === 1;
+  prev.onclick = () => { pageCourante--; afficherPage(); };
+  btns.appendChild(prev);
+
+  // Pages
+  for (let i = 1; i <= totalPages; i++) {
+    if (totalPages > 7 && i > 3 && i < totalPages - 1 && Math.abs(i - pageCourante) > 1) {
+      if (i === 4) btns.insertAdjacentHTML('beforeend','<span style="padding:0 4px;color:var(--texte-doux);">…</span>');
+      continue;
+    }
+    const btn = document.createElement('button');
+    btn.className = 'pag-btn' + (i === pageCourante ? ' actif' : '');
+    btn.textContent = i;
+    btn.onclick = (function(p){ return () => { pageCourante = p; afficherPage(); }; })(i);
+    btns.appendChild(btn);
+  }
+
+  // Suivant
+  const next = document.createElement('button');
+  next.className = 'pag-btn';
+  next.innerHTML = '<i class="fas fa-chevron-right"></i>';
+  next.disabled = pageCourante === totalPages;
+  next.onclick = () => { pageCourante++; afficherPage(); };
+  btns.appendChild(next);
+}
+
+// ═══════════════════════════════════════════
+// MODAL MESSAGE
+// ═══════════════════════════════════════════
+function voirMessage(id) {
+  const msgs = getMsgs();
+  const msg = msgs.find(m => m.id === id);
+  if (!msg) return;
+
+  msgCourantId = id;
+
+  document.getElementById('m-nom').textContent   = msg.nom;
+  document.getElementById('m-meta').textContent  = `Reçu le ${formaterDate(msg.date, true)}`;
+  document.getElementById('m-email').textContent = msg.email;
+  document.getElementById('m-email').href        = 'mailto:' + msg.email;
+  document.getElementById('m-profil').textContent = msg.profil || '—';
+  document.getElementById('m-sujet').textContent  = msg.sujet  || '—';
+  document.getElementById('m-msg').textContent    = msg.message;
+
+  // Marquer comme lu
+  if (msg.statut === 'nouveau') {
+    msg.statut = 'lu';
+    saveMsgs(msgs);
+    mettreAJourStats();
+    filtrerMessages();
+  }
+
+  document.getElementById('modal-msg').classList.add('ouvert');
+  document.body.style.overflow = 'hidden';
+}
+
+function fermerModalMsg() {
+  document.getElementById('modal-msg').classList.remove('ouvert');
+  document.body.style.overflow = '';
+  msgCourantId = null;
+}
+
+// ═══════════════════════════════════════════
+// SUPPRESSION
+// ═══════════════════════════════════════════
+function demanderSuppression() {
+  document.getElementById('confirm-del').classList.add('ouvert');
+}
+
+function demanderSuppressionDirecte(id) {
+  msgCourantId = id;
+  document.getElementById('confirm-del').classList.add('ouvert');
+}
+
+function annulerSuppression() {
+  document.getElementById('confirm-del').classList.remove('ouvert');
+}
+
+function confirmerSuppression() {
+  if (!msgCourantId) return;
+  const msgs = getMsgs().filter(m => m.id !== msgCourantId);
+  saveMsgs(msgs);
+  nbSupprimes++;
+  localStorage.setItem('fse_del_count', nbSupprimes);
+  document.getElementById('confirm-del').classList.remove('ouvert');
+  fermerModalMsg();
+  mettreAJourStats();
+  filtrerMessages();
+  showToast('<i class="fas fa-check-circle" style="margin-right:7px;"></i>Message supprimé avec succès', false);
+  msgCourantId = null;
+}
+
+// ═══════════════════════════════════════════
+// UTILITAIRES
+// ═══════════════════════════════════════════
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formaterDate(dateStr, long = false) {
+  const d = new Date(dateStr);
+  if (isNaN(d)) return '—';
+  const opts = long
+    ? { day:'2-digit', month:'long', year:'numeric', hour:'2-digit', minute:'2-digit' }
+    : { day:'2-digit', month:'short', year:'numeric' };
+  return d.toLocaleDateString('fr-FR', opts);
+}
+
+function showToast(html, rouge = false) {
+  const t = document.getElementById('toast');
+  t.innerHTML = html;
+  t.className = 'toast' + (rouge ? ' rouge' : '') + ' visible';
+  setTimeout(() => { t.classList.remove('visible'); }, 3200);
+}
+</script>
+</body>
+</html>

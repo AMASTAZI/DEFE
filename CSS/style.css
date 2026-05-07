@@ -209,6 +209,25 @@ section{padding:80px 4%;}
    PAGE ACCUEIL — HÉROS
 ══════════════════════════════════════════════ */
 
+.heros{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap:48px;
+  align-items:center;
+  padding:96px 4% 78px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4,45,18,0.82) 0%,
+      rgba(11,92,46,0.75) 50%,
+      rgba(2,26,9,0.85) 100%
+    ),
+    url('../image/yaounde.jpg') center center / cover no-repeat;
+  min-height:calc(100vh - 68px);
+}
+
 .heros::before{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 60% 80% at 80% 50%, rgba(11,92,46,0.10) 0%, transparent 70%),
@@ -226,6 +245,8 @@ section{padding:80px 4%;}
   background:rgba(27,200,96,0.15);border:1px solid rgba(27,200,96,0.35);
   color:#5DDF9A;font-size:11px;letter-spacing:2px;text-transform:uppercase;
   padding:6px 16px;border-radius:50px;margin-bottom:26px;font-weight:600;
+  max-width:100%;
+  flex-wrap:wrap;
 }
 
 .heros-contenu{position:relative;z-index:1;animation:montee 0.9s ease both;}
@@ -233,6 +254,8 @@ section{padding:80px 4%;}
   font-family:'Libre Baskerville',serif;
   font-size:clamp(36px,4.5vw,62px);font-weight:700;
   color:var(--blanc);line-height:1.1;margin-bottom:10px;
+  overflow-wrap:anywhere;
+  hyphens:auto;
 }
 .heros-contenu h1 em{
   font-style:italic;color:#5DDF9A;display:block;margin-top:4px;
@@ -240,6 +263,8 @@ section{padding:80px 4%;}
 .heros-sous-titre{
   font-size:16px;color:rgba(255,255,255,0.7);line-height:1.75;
   max-width:520px;margin:20px 0 36px;
+  overflow-wrap:anywhere;
+  hyphens:auto;
 }
 .heros-actions{display:flex;gap:14px;flex-wrap:wrap;}
 
@@ -671,7 +696,23 @@ footer{background:#021A09;padding:56px 4% 28px;color:rgba(255,255,255,0.55);}
 ══════════════════════════════════════════════ */
 @media(max-width:960px){
   .heros{grid-template-columns:1fr;padding:60px 4%;min-height:auto;}
-  .heros-visuel{display:none;}
+  .heros-visuel{
+    display:block;
+    width:100%;
+    animation:none;
+    margin-top:22px;
+  }
+  .grille-stats{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+  }
+  .stat-carte{padding:18px 16px;}
+  .stat-nombre{font-size:34px;}
+  .heros-contenu{max-width:720px;margin-inline:auto;text-align:center;}
+  .heros-sous-titre{max-width:unset;margin-inline:auto;}
+  .badge-heros{justify-content:center;margin-inline:auto;}
+  .heros-actions{justify-content:center;}
+  .recherche-page--hero{margin-inline:auto;}
   .grille-nav-rapide{grid-template-columns:1fr;}
   .item-nav-rapide{border-right:none;border-bottom:1px solid var(--bordure);}
   .grille-atouts,.grille-parcours,.grille-vmv{grid-template-columns:1fr;}
@@ -691,6 +732,23 @@ footer{background:#021A09;padding:56px 4% 28px;color:rgba(255,255,255,0.55);}
   .pied-bas{flex-direction:column;gap:6px;text-align:center;}
   .petits-chiffres{grid-template-columns:1fr 1fr;}
   .heros-actions{flex-direction:column;}
+  .heros-contenu h1{
+    font-size:clamp(28px,8.5vw,40px);
+    line-height:1.12;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:manual;
+  }
+  .heros-sous-titre{
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:manual;
+  }
+  .badge-heros{font-size:10px;letter-spacing:1px;padding:6px 12px;}
+  .heros-actions .btn-principal,
+  .heros-actions .btn-secondaire{width:100%;justify-content:center;}
+  .recherche-page{padding:10px 12px;}
+  .grille-stats{grid-template-columns:1fr;}
 }
 a i {
     margin-right: 8px;
